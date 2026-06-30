@@ -1,0 +1,42 @@
+# Operating System
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Dependencies
+node_modules/
+vendor/
+
+# Cache
+.cache/
+tmp/
+
+# Composer
+composer.lock
+
+# Package Lock
+package-lock.json
+
+# Build
+dist/
+build/
+
+# Docker
+docker/*.log
+
+# Database
+*.sqlite
+
+# Misc
+*.bak
+*.tmp
