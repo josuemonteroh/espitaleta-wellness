@@ -1,194 +1,342 @@
-# NYVORA
+# ESPITALETA WELLNESS
 
-## Intelligent Nutrition Monitoring & Weight Management Platform
+# Intelligent Healthcare Platform
 
-Nyvora is a web-based platform designed to support patient monitoring, nutritional follow-up and biometric tracking through a centralized and intuitive interface.
-
-The platform enables healthcare professionals and patients to manage health-related information, register biometric measurements, visualize historical trends and monitor key indicators through dashboards and analytical tools.
-
-This repository contains the implementation of **Nyvora**, developed under real-world software engineering practices while serving as the academic project for the **SC-502 Web Client/Server Environment** course at **Universidad Fidélitas**.
+Next-generation digital healthcare ecosystem designed to connect patients, healthcare professionals and intelligent technologies into a unified platform for preventive healthcare, clinical decision support and personalized wellness.
 
 ---
 
-## Project Vision
+## Developed by
 
-To provide a scalable foundation for digital wellness solutions by centralizing patient information, biometric measurements and health monitoring processes into a single platform.
+**SparkByte Technologies**
 
-Nyvora is conceived as a functional first version capable of evolving into more advanced healthcare and wellness solutions through future integrations, analytics and intelligent services.
-
----
-
-## Current Scope
-
-### Included Features
-
-* User Authentication
-* Patient Management
-* Biometric Metrics Registration
-* Dashboard Visualization
-* Historical Tracking
-* Alert Management
-* Role-Based Access Control
-
-### Future Evolution
-
-The following features are documented as future phases and are not included in the current implementation:
-
-* Google Health Connect Integration
-* Wearables Integration
-* Artificial Intelligence
-* Smart Recommendations
-* External APIs
-* Automated Data Synchronization
-* Enterprise Integrations
-* Advanced Analytics
+Enterprise software engineering focused on healthcare innovation, cloud solutions and intelligent digital platforms.
 
 ---
 
-## Technology Stack
+# Overview
 
-| Layer           | Technology              |
-| --------------- | ----------------------- |
-| Frontend        | HTML5, CSS3, JavaScript |
-| Backend         | PHP                     |
-| Database        | MySQL                   |
-| Infrastructure  | Docker                  |
-| Version Control | GitHub                  |
+Espitaleta Wellness is an enterprise healthcare platform focused on transforming patient care through modern software engineering, clinical analytics and interoperable healthcare technologies.
+
+The platform centralizes patient information, biometric measurements, medical history, nutrition monitoring and clinical management into a secure, scalable and modular ecosystem capable of supporting healthcare professionals with better decision-making and improved patient experiences.
+
+Its architecture has been designed to evolve into a complete intelligent healthcare platform through future integrations with Artificial Intelligence, Google Health Connect, wearable devices and advanced analytics.
 
 ---
 
-## System Architecture
+# Vision
+
+To become one of Latin America's leading digital healthcare ecosystems by integrating clinical information, wearable technologies and intelligent software into a unified platform that improves preventive healthcare and patient outcomes.
+
+---
+
+# Mission
+
+Empower healthcare professionals and patients through innovative digital technologies that simplify clinical workflows, improve patient engagement and support data-driven healthcare decisions.
+
+---
+
+# Core Pillars
+
+- Patient-Centered Care
+- Clinical Innovation
+- Healthcare Interoperability
+- Intelligent Technologies
+- Secure Information Management
+- Preventive Healthcare
+- Cloud Native Architecture
+- Scalable Software Engineering
+
+---
+
+# Enterprise Architecture
+
+Espitaleta Wellness follows a modular enterprise architecture composed of five specialized layers.
+
+## Flank 1 — Data Extraction
+
+Responsible for collecting patient information from future external integrations.
+
+Planned integrations include:
+
+- Google Health Connect
+- Wearable Devices
+- Mobile Applications
+- Automated ETL Services
+
+---
+
+## Flank 2 — Data Platform
+
+Responsible for storing and organizing clinical information.
+
+Main components:
+
+- PostgreSQL
+- Patient Records
+- Clinical History
+- Biometric Measurements
+- Nutrition Data
+- Reports
+- Insights
+
+---
+
+## Flank 3 — Artificial Intelligence *(Planned)*
+
+Future intelligent services designed to support healthcare professionals.
+
+Planned capabilities:
+
+- Clinical Recommendations
+- Predictive Analytics
+- Risk Detection
+- Intelligent Alerts
+- Healthcare Insights
+
+---
+
+## Flank 4 — Backend Services
+
+Business logic responsible for exposing platform functionality.
+
+Current architecture includes:
+
+- REST API
+- Authentication
+- Authorization
+- Business Logic
+- Clinical Services
+- DTOs / View Models
+
+---
+
+## Flank 5 — Frontend Applications
+
+Modern interfaces for healthcare professionals and patients.
+
+Current modules include:
+
+- Authentication
+- Clinical Dashboard
+- Patient Dashboard
+- Patient Management
+- Reports
+- Historical Information
+
+---
+
+# Technology Stack
+
+| Layer | Technology |
+|---------|------------|
+| Frontend | HTML5, CSS3, JavaScript |
+| Backend | PHP |
+| Database | PostgreSQL *(Target Platform)* |
+| Current Database | MySQL *(Prototype)* |
+| Infrastructure | Docker |
+| Artificial Intelligence | Planned |
+| Health Integration | Google Health Connect *(Planned)* |
+| Mobile | Android / iOS *(Planned)* |
+| Version Control | Git & GitHub |
+
+---
+
+# Current Core Modules
+
+- User Authentication
+- User Management
+- Patient Management
+- Nutrition Management
+- Clinical Dashboard
+- Historical Records
+- Reports
+- Role Management
+
+---
+
+# Future Platform Capabilities
+
+The following features are part of the product roadmap and are not included in the current implementation.
+
+- Artificial Intelligence
+- Google Health Connect Integration
+- Wearable Device Synchronization
+- Mobile Applications
+- Predictive Analytics
+- Intelligent Recommendations
+- Automated Notifications
+- Enterprise Reporting
+- Clinical Insights
+
+---
+
+# Repository Structure
 
 ```text
-User
-   │
-   ▼
-Frontend
-(HTML, CSS, JavaScript)
-   │
-   ▼
-Backend
-(PHP)
-   │
-   ▼
-Database
-(MySQL)
-```
-
----
-
-## Core Modules
-
-### Authentication
-
-* User login
-* Session management
-* Basic role validation
-
-### Patient Management
-
-* Create patients
-* Edit patients
-* View patient information
-* Deactivate patients
-
-### Metrics Management
-
-Manual registration of:
-
-* Weight
-* BMI
-* Body Fat Percentage
-* Heart Rate
-* Sleep Hours
-* Daily Steps
-
-### Dashboard
-
-* Patient overview
-* Key metrics
-* Alerts summary
-* General indicators
-
-### Historical Tracking
-
-* Historical metrics visualization
-* Date filtering
-* Trend analysis
-
-### Alerts
-
-* Rule-based alerts
-* Monitoring of relevant health indicators
-
----
-
-## Development Team
-
-| Team Member                   | Role                                                               |
-| ----------------------------- | ------------------------------------------------------------------ |
-| Josué David Montero Hernández | Frontend Development 
-| Kevin Jiménez Sánchez         | Frontend Development                                               |
-| Derek Stuard Vega Barquero    | Backend Development                                                |
-| Sebastián Gondrez Acuña       | Database Development                                               |
-
----
-
-## Repository Structure
-
-```text
-nyvora-sc502
+espitaleta-wellness
 │
-├── frontend
+├── .github
+├── ai
 ├── backend
+├── contracts
 ├── database
-├── docs
 ├── docker
+├── docs
+├── etl
+├── frontend
+├── mobile
 ├── screenshots
+├── scripts
+├── docker-compose.yml
 └── README.md
 ```
 
-### Directory Description
+---
 
-| Directory   | Purpose                                    |
-| ----------- | ------------------------------------------ |
-| frontend    | User interface development                 |
-| backend     | Business logic and application services    |
-| database    | Database scripts, models and documentation |
-| docs        | Project documentation and deliverables     |
-| docker      | Container configuration                    |
-| screenshots | Development evidence and visual progress   |
+# Development Workflow
+
+Planning
+
+↓
+
+Architecture
+
+↓
+
+Development
+
+↓
+
+Testing
+
+↓
+
+Code Review
+
+↓
+
+Deployment
+
+↓
+
+Continuous Improvement
 
 ---
 
-## Development Workflow
+# Roadmap
 
-The project uses GitHub as the primary collaboration and version control platform. Team members work on independent development tasks while maintaining an organized integration process that ensures stability, traceability and collaboration throughout the development lifecycle.
+## Phase 1
 
----
+Enterprise Prototype
 
-## Project Status
-
-🚧 Active Development
-
-**Version:** 1.0
-
-**Status:** Planning & Initial Development
+- Authentication
+- Patient Management
+- Clinical Dashboard
+- Nutrition Management
+- Documentation
 
 ---
 
-## Academic Context
+## Phase 2
 
-Nyvora is being developed as the official project for the **SC-502 Web Client/Server Environment** course at **Universidad Fidélitas**, applying software engineering, frontend development, backend development, database design and collaborative development practices.
+Platform Expansion
+
+- Backend API
+- PostgreSQL Migration
+- Docker Improvements
+- Security Enhancements
 
 ---
 
-## Long-Term Vision
+## Phase 3
 
-The current version focuses on delivering a functional and complete platform within the project's academic scope. Future versions may expand into broader wellness and healthcare solutions through integrations, analytics, automation and intelligent decision-support services.
+Healthcare Integrations
+
+- Google Health Connect
+- Wearables
+- ETL Services
+- Mobile Synchronization
 
 ---
 
-## License
+## Phase 4
 
-Academic and educational use.
+Artificial Intelligence
+
+- AI Agents
+- Clinical Recommendations
+- Predictive Analytics
+- Intelligent Alerts
+
+---
+
+## Phase 5
+
+Enterprise Ecosystem
+
+- Mobile Applications
+- Multi-Clinic Support
+- Cloud Infrastructure
+- Advanced Clinical Analytics
+
+---
+
+# Documentation
+
+Technical documentation is available inside the **docs** directory.
+
+Documentation includes:
+
+- Software Architecture
+- API Documentation
+- Technical Contracts
+- UML Diagrams
+- Database Documentation
+- Planning
+- Mockups
+- Technical Research
+
+---
+
+# Engineering
+
+## Product
+
+Espitaleta Wellness
+
+## Software Engineering
+
+SparkByte Technologies
+
+Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions • Artificial Intelligence
+
+---
+
+# Project Status
+
+**Current Stage**
+
+Enterprise Prototype
+
+**Development Methodology**
+
+Agile
+
+**Architecture**
+
+Enterprise Modular Architecture
+
+**Status**
+
+Active Development
+
+---
+
+# License
+
+Copyright © 2026 Espitaleta Wellness.
+
+Developed and maintained by **SparkByte Technologies**.
+
+All Rights Reserved.
