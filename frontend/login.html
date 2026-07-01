@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nyvora - Login</title>
 
-    <link rel="stylesheet" href="css/login.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Espitaleta Wellness | Iniciar sesión</title>
+
+    <link rel="icon" type="image/png" href="assets/logos/logo.png">
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Base -->
+
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/base/global.css">
+
+    <!-- Página -->
+
+    <link rel="stylesheet" href="css/pages/login.css">
+
+    <!-- Lucide -->
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Iconify -->
+
+    <script src="https://code.iconify.design/iconify-icon/3.1.1/iconify-icon.min.js"></script>
+
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="left-panel">
+    <!-- PANEL IZQUIERDO -->
 
-            <div class="branding">
+    <section class="left-panel">
 
-                <img src="assets/logo.png" alt="Espitaleta Wellness">
+        <div class="branding">
+
+            <img
+                src="assets/logos/logo.png"
+                alt="Espitaleta Wellness">
+
+            <div class="brand-card">
+
+                <h2>
+
+                    Plataforma Clínica Inteligente
+
+                </h2>
 
                 <p class="tagline">
-                    Intelligent Nutrition Monitoring
-                    <br>
-                    &
-                    <br>
-                    Weight Management Platform
+
+                    Seguimiento nutricional, control metabólico y atención integral del paciente.
+
                 </p>
 
-            </div>
+                <div class="brand-features">
 
-        </div>
+                    <div class="feature">
 
-        <div class="right-panel">
+                        <i data-lucide="activity"></i>
 
-            <div class="login-card">
-
-                <h2>Bienvenido de nuevo</h2>
-
-                <p>
-                    Inicia sesión para continuar en Espitaleta Wellness
-                </p>
-
-                <form action="pages/dashboard.html">
-
-                    <label>Correo electrónico</label>
-
-                    <input
-                        type="email"
-                        placeholder="Ingresa tu correo electrónico">
-
-                    <label>Contraseña</label>
-
-                    <input
-                        type="password"
-                        placeholder="Ingresa tu contraseña">
-
-                    <div class="login-options">
-
-                        <label class="remember">
-                            <input type="checkbox">
-                            Recordar sesión
-                        </label>
-
-                        <a href="#">
-                            ¿Olvidó su contraseña?
-                        </a>
+                        <span>Monitoreo clínico inteligente</span>
 
                     </div>
 
-                    <button type="submit">
-                        Iniciar Sesión
-                    </button>
+                    <div class="feature">
 
-                </form>
+                        <i data-lucide="heart-pulse"></i>
 
-                <div class="register-link">
+                        <span>Expediente digital del paciente</span>
 
-                    ¿No tiene una cuenta?
+                    </div>
 
-                    <a href="#">
-                        Crear cuenta
-                    </a>
+                    <div class="feature">
+
+                        <i data-lucide="shield-check"></i>
+
+                        <span>Información protegida y segura</span>
+
+                    </div>
 
                 </div>
 
@@ -87,7 +100,255 @@
 
         </div>
 
-    </div>
+    </section>
+
+    <!-- PANEL DERECHO-->
+
+    <section class="right-panel">
+
+        <div class="login-card">
+
+            <div class="login-header">
+
+                <h2>
+
+                    Bienvenido
+
+                </h2>
+
+                <p>
+
+                    Inicie sesión para acceder a la plataforma Espitaleta Wellness.
+
+                </p>
+
+            </div>
+
+            <form id="loginForm">
+
+                <!-- Correo -->
+
+                <label for="email">
+
+                    Correo electrónico
+
+                </label>
+
+                <div class="input-group">
+
+                    <i data-lucide="mail"></i>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Ingrese su correo"
+                        autocomplete="email"
+                        required>
+
+                </div>
+
+                <!-- Contraseña -->
+
+                <label for="password">
+
+                    Contraseña
+
+                </label>
+
+                <div class="input-group">
+
+                    <i data-lucide="lock"></i>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Ingrese su contraseña"
+                        autocomplete="current-password"
+                        required>
+
+                    <button
+                        type="button"
+                        class="toggle-password"
+                        id="togglePassword">
+
+                        <i data-lucide="eye"></i>
+
+                    </button>
+
+                </div>
+
+                <!-- Opciones -->
+
+                <div class="login-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox">
+
+                        Mantener mi sesión iniciada
+
+                    </label>
+
+                    <a href="#">
+
+                        ¿Olvidó su contraseña?
+
+                    </a>
+
+                </div>
+
+                <!-- Login -->
+
+                <button
+                    class="login-btn"
+                    id="loginButton"
+                    type="submit">
+
+                    <span>
+
+                        Ingresar
+
+                    </span>
+
+                    <i data-lucide="arrow-right"></i>
+
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span>
+
+                    o continúe con
+
+                </span>
+
+            </div>
+
+            <!-- Social Login -->
+
+            <div class="social-login">
+
+                <!-- Google -->
+
+                <button
+                    type="button"
+                    class="social-btn">
+
+                    <div class="social-left">
+
+                        <img
+                            src="assets/icons/google.png"
+                            alt="Google"
+                            class="social-icon">
+
+                        <span>
+
+                            Continuar con Google
+
+                        </span>
+
+                    </div>
+
+                </button>
+
+                <!-- Apple -->
+
+                <button
+                    type="button"
+                    class="social-btn">
+
+                    <div class="social-left">
+
+                        <img
+                            src="assets/icons/apple.png"
+                            alt="Apple"
+                            class="social-icon">
+
+                        <span>
+
+                            Continuar con Apple
+
+                        </span>
+
+                    </div>
+
+                </button>
+
+                <!-- Microsoft -->
+
+                <button
+                    type="button"
+                    class="social-btn">
+
+                    <div class="social-left">
+
+                        <img
+                            src="assets/icons/microsoft.png"
+                            alt="Microsoft"
+                            class="social-icon">
+
+                        <span>
+
+                            Continuar con Microsoft
+
+                        </span>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+            <!-- Registro -->
+
+            <div class="register-link">
+
+                ¿Necesita acceso?
+
+                <a href="#">
+
+                    Solicitar acceso
+
+                </a>
+
+            </div>
+
+            <!-- Footer -->
+
+            <div class="login-footer">
+
+                <small>
+
+                    Versión 0.2.0
+
+                </small>
+
+                <small>
+
+                    © 2026 SparkByte Technologies
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+<script src="js/login.js"></script>
 
 </body>
+
 </html>
