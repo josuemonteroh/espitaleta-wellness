@@ -1,39 +1,237 @@
-body{
+/* ESPITALETA WELLNESS
+   DESIGN SYSTEM
+   Typography */
+
+/* FONT FAMILY */
+
+html{
 
     font-family:'Inter',sans-serif;
 
+    font-size:16px;
+
+    -webkit-font-smoothing:antialiased;
+
+    -moz-osx-font-smoothing:grayscale;
+
+    text-rendering:optimizeLegibility;
+
 }
 
-h1,
-h2,
-h3,
-h4{
+/* BASE TYPOGRAPHY */
+
+body{
 
     color:var(--text-primary);
 
-    font-weight:700;
+    font-family:'Inter',sans-serif;
 
-}
+    font-size:1rem;
 
-p{
-
-    color:var(--text-secondary);
+    font-weight:400;
 
     line-height:1.6;
 
 }
 
-label{
+/* DISPLAY */
+
+.display-xl{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:-0.04em;
+
+}
+
+.display-lg{
+
+    font-size:3.5rem;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:-0.03em;
+
+}
+
+.display-md{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    letter-spacing:-0.02em;
+
+}
+
+/* HEADINGS */
+   
+   
+.heading-1{
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+.heading-2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    line-height:1.25;
+
+}
+
+.heading-3{
+
+    font-size:1.75rem;
+
+    font-weight:700;
+
+    line-height:1.3;
+
+}
+
+.heading-4{
+
+    font-size:1.5rem;
 
     font-weight:600;
+
+    line-height:1.35;
+
+}
+
+.heading-5{
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+.heading-6{
+
+    font-size:1.125rem;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+}
+
+/* BODY */
+
+.body-lg{
+
+    font-size:1.125rem;
+
+    line-height:1.8;
+
+    font-weight:400;
+
+}
+
+.body{
+
+    font-size:1rem;
+
+    line-height:1.7;
+
+    font-weight:400;
+
+}
+
+.body-sm{
+
+    font-size:.875rem;
+
+    line-height:1.6;
+
+    font-weight:400;
+
+}
+
+/* LABELS */
+
+.label{
+
+    display:block;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    line-height:1.4;
 
     color:var(--text-primary);
 
 }
 
-a{
+.label-sm{
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    line-height:1.4;
+
+    color:var(--text-secondary);
+
+}
+
+/* CAPTION */
+
+.caption{
+
+    font-size:.75rem;
+
+    font-weight:400;
+
+    line-height:1.5;
+
+    color:var(--text-secondary);
+
+}
+
+/* OVERLINE */
+
+.overline{
+
+    font-size:.75rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    color:var(--text-secondary);
+
+}
+
+/* LINKS */
+
+.link{
 
     color:var(--primary);
+
+    font-weight:500;
 
     text-decoration:none;
 
@@ -41,8 +239,84 @@ a{
 
 }
 
-a:hover{
+.link:hover{
 
     color:var(--primary-dark);
+
+    text-decoration:underline;
+
+}
+
+/* TEXT UTILITIES */
+
+.text-primary{
+
+    color:var(--text-primary);
+
+}
+
+.text-secondary{
+
+    color:var(--text-secondary);
+
+}
+
+.text-success{
+
+    color:var(--success);
+
+}
+
+.text-warning{
+
+    color:var(--warning);
+
+}
+
+.text-danger{
+
+    color:var(--danger);
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.text-bold{
+
+    font-weight:700;
+
+}
+
+.text-semibold{
+
+    font-weight:600;
+
+}
+
+.text-medium{
+
+    font-weight:500;
+
+}
+
+.text-regular{
+
+    font-weight:400;
 
 }

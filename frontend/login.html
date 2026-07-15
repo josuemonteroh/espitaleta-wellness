@@ -1,337 +1,506 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <title>Espitaleta Wellness | Iniciar sesión</title>
+    <title>Sign In | Espitaleta Wellness</title>
 
-    <link rel="icon" type="image/png" href="assets/logos/logo.png">
+    <!-- FAVICON -->
 
-    <!-- Google Fonts -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/logos/logo.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- GOOGLE FONTS -->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-    <!-- Base -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-    <link rel="stylesheet" href="css/base/variables.css">
-    <link rel="stylesheet" href="css/base/reset.css">
-    <link rel="stylesheet" href="css/base/typography.css">
-    <link rel="stylesheet" href="css/base/global.css">
-
-    <!-- Página -->
-
-    <link rel="stylesheet" href="css/pages/login.css">
-
-    <!-- Lucide -->
+    <!-- LUCIDE -->
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Iconify -->
+    <!-- BASE -->
 
-    <script src="https://code.iconify.design/iconify-icon/3.1.1/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="css/base/reset.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/base/global.css">
+
+    <!-- COMPONENTS -->
+
+    <link rel="stylesheet" href="css/components/button.css">
+    <link rel="stylesheet" href="css/components/card.css">
+    <link rel="stylesheet" href="css/components/form.css">
+    <link rel="stylesheet" href="css/components/badge.css">
+
+    <!-- LAYOUT -->
+
+    <link rel="stylesheet" href="css/layouts/auth.css">
+
+    <!-- PAGE -->
+
+    <link rel="stylesheet" href="css/pages/login.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <main class="auth-layout">
 
-    <!-- PANEL IZQUIERDO -->
+        <!-- BRAND PANEL -->
 
-    <section class="left-panel">
+        <section class="auth-brand">
 
-        <div class="branding">
+            <div class="brand-content">
 
-            <img
-                src="assets/logos/logo.png"
-                alt="Espitaleta Wellness">
+                <!-- LOGO -->
 
-            <div class="brand-card">
+                <img
+                    src="assets/logos/logo.png"
+                    alt="Espitaleta Wellness"
+                    class="brand-logo">
 
-                <h2>
+                <!-- BADGE -->
 
-                    Plataforma Clínica Inteligente
+                <span
+                    class="badge badge-primary"
+                    data-lang="brand_badge">
 
-                </h2>
+                    Connected Healthcare Platform
 
-                <p class="tagline">
+                </span>
 
-                    Seguimiento nutricional, control metabólico y atención integral del paciente.
-
-                </p>
+                <!-- FEATURES -->
 
                 <div class="brand-features">
 
-                    <div class="feature">
+                                    <!-- FEATURE 01 -->
 
-                        <i data-lucide="activity"></i>
+                    <article class="feature-item">
 
-                        <span>Monitoreo clínico inteligente</span>
+                        <div class="feature-icon">
 
-                    </div>
+                            <i data-lucide="file-heart"></i>
 
-                    <div class="feature">
+                        </div>
 
-                        <i data-lucide="heart-pulse"></i>
+                        <div class="feature-content">
 
-                        <span>Expediente digital del paciente</span>
+                            <h3 data-lang="feature_records_title">
 
-                    </div>
+                                Clinical Records
 
-                    <div class="feature">
+                            </h3>
 
-                        <i data-lucide="shield-check"></i>
+                            <p data-lang="feature_records_description">
 
-                        <span>Información protegida y segura</span>
+                                Access complete patient records, medical history and nutritional assessments from a centralized platform.
 
-                    </div>
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- FEATURE 02 -->
+
+                    <article class="feature-item">
+
+                        <div class="feature-icon">
+
+                            <i data-lucide="activity"></i>
+
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3 data-lang="feature_monitoring_title">
+
+                                Health Monitoring
+
+                            </h3>
+
+                            <p data-lang="feature_monitoring_description">
+
+                                Monitor biometric indicators, nutritional progress and patient evolution in real time.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- FEATURE 03 -->
+
+                    <article class="feature-item">
+
+                        <div class="feature-icon">
+
+                            <i data-lucide="brain-circuit"></i>
+
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3 data-lang="feature_analytics_title">
+
+                                Clinical Intelligence
+
+                            </h3>
+
+                            <p data-lang="feature_analytics_description">
+
+                                Transform clinical information into actionable insights that support healthcare decision-making.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                    <!-- FEATURE 04 -->
+
+                    <article class="feature-item">
+
+                        <div class="feature-icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+                        <div class="feature-content">
+
+                            <h3 data-lang="feature_security_title">
+
+                                Enterprise Security
+
+                            </h3>
+
+                            <p data-lang="feature_security_description">
+
+                                Protect sensitive healthcare information with secure authentication and role-based access.
+
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+                <!-- BRAND FOOTER -->
+
+                <div class="brand-footer">
+
+                    <p data-lang="brand_footer">
+
+                        Designed and developed by SparkByte Technologies.
+
+                    </p>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
+        <!-- LOGIN PANEL -->
 
-    <!-- PANEL DERECHO-->
+        <section class="auth-login">
 
-    <section class="right-panel">
+            <div class="login-container">
 
-        <div class="login-card">
+                <div class="card login-card">
 
-            <div class="login-header">
+                                    <!-- LANGUAGE -->
 
-                <h2>
+                    <div class="language-selector">
 
-                    Bienvenido
+                        <button
+                            type="button"
+                            id="language-button"
+                            class="language-button">
 
-                </h2>
+                            <i data-lucide="languages"></i>
 
-                <p>
+                            <span id="current-language">
 
-                    Inicie sesión para acceder a la plataforma Espitaleta Wellness.
+                                EN
 
-                </p>
+                            </span>
 
-            </div>
+                            <i data-lucide="chevron-down"></i>
 
-            <form id="loginForm">
+                        </button>
 
-                <!-- Correo -->
+                        <div
+                            id="language-menu"
+                            class="language-menu">
 
-                <label for="email">
+                            <button
+                                type="button"
+                                data-language="en">
 
-                    Correo electrónico
+                                English
 
-                </label>
+                            </button>
 
-                <div class="input-group">
+                            <button
+                                type="button"
+                                data-language="es">
 
-                    <i data-lucide="mail"></i>
+                                Español
 
-                    <input
-                        id="email"
-                        type="email"
-                        placeholder="Ingrese su correo"
-                        autocomplete="email"
-                        required>
+                            </button>
 
-                </div>
+                        </div>
 
-                <!-- Contraseña -->
+                    </div>
 
-                <label for="password">
+                    <!-- LOGIN HEADER -->
 
-                    Contraseña
+                    <header class="login-header">
 
-                </label>
+                        <h2
+                            class="login-title"
+                            data-lang="login_title">
 
-                <div class="input-group">
+                            Welcome Back
 
-                    <i data-lucide="lock"></i>
+                        </h2>
 
-                    <input
-                        id="password"
-                        type="password"
-                        placeholder="Ingrese su contraseña"
-                        autocomplete="current-password"
-                        required>
+                        <p
+                            class="login-subtitle"
+                            data-lang="login_subtitle">
+
+                            Sign in to access your Espitaleta Wellness workspace.
+
+                        </p>
+
+                    </header>
+
+                    <!-- LOGIN FORM -->
+
+                    <form
+                        id="login-form"
+                        autocomplete="off"
+                        novalidate>
+
+                        <!-- EMAIL -->
+
+                        <div class="form-group">
+
+                            <label
+                                for="email"
+                                class="form-label"
+                                data-lang="email_label">
+
+                                Email Address
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    id="email"
+                                    name="email"
+                                    type="email"
+                                    class="input"
+                                    autocomplete="off"
+                                    data-placeholder="email_placeholder"
+                                    placeholder="Enter your email"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                        <!-- PASSWORD -->
+
+                        <div class="form-group">
+
+                            <label
+                                for="password"
+                                class="form-label"
+                                data-lang="password_label">
+
+                                Password
+
+                            </label>
+
+                            <div class="input-group">
+
+                                <i data-lucide="lock"></i>
+
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    class="input"
+                                    autocomplete="off"
+                                    data-placeholder="password_placeholder"
+                                    placeholder="Enter your password"
+                                    required>
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    id="toggle-password"
+                                    aria-label="Show password">
+
+                                    <i data-lucide="eye"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                                            <!-- LOGIN OPTIONS -->
+
+                    <div class="login-options">
+
+                        <label class="remember">
+
+                            <input
+                                id="remember"
+                                type="checkbox">
+
+                            <span data-lang="remember_me">
+
+                                Keep me signed in
+
+                            </span>
+
+                        </label>
+
+                        <a
+                            href="forgot-password.html"
+                            class="text-link"
+                            data-lang="forgot_password">
+
+                            Forgot password?
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg btn-block"
+                        id="login-button">
+
+                        <span data-lang="login_button">
+
+                            Sign In
+
+                        </span>
+
+                        <i data-lucide="arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- SSO -->
+
+                <div class="sso-section">
+
+                    <div class="divider">
+
+                        <span data-lang="divider">
+
+                            Enterprise Access
+
+                        </span>
+
+                    </div>
+
 
                     <button
                         type="button"
-                        class="toggle-password"
-                        id="togglePassword">
+                        class="btn btn-outline btn-md btn-block">
 
-                        <i data-lucide="eye"></i>
+                        <i data-lucide="building-2"></i>
+
+                        <span data-lang="enterprise_login">
+
+                            Sign in with Organization
+
+                        </span>
 
                     </button>
 
                 </div>
 
-                <!-- Opciones -->
 
-                <div class="login-options">
+                <!-- REQUEST ACCESS -->
 
-                    <label class="remember">
+                <div class="request-access">
 
-                        <input type="checkbox">
+                    <span data-lang="request_access_text">
 
-                        Mantener mi sesión iniciada
+                        Don't have an account?
 
-                    </label>
+                    </span>
 
-                    <a href="#">
 
-                        ¿Olvidó su contraseña?
+                    <a
+                        href="request-access.html"
+                        class="text-link"
+                        data-lang="request_access">
+
+                        Request Access
 
                     </a>
 
                 </div>
 
-                <!-- Login -->
 
-                <button
-                    class="login-btn"
-                    id="loginButton"
-                    type="submit">
+                <!-- LOGIN FOOTER -->
 
-                    <span>
+                <footer class="login-footer">
 
-                        Ingresar
+                    <small>
 
-                    </span>
+                        Version 1.0.0
 
-                    <i data-lucide="arrow-right"></i>
+                    </small>
 
-                </button>
 
-            </form>
+                    <small>
 
-            <!-- Divider -->
+                        © 2026 SparkByte Technologies
 
-            <div class="divider">
+                    </small>
 
-                <span>
+                </footer>
 
-                    o continúe con
-
-                </span>
-
-            </div>
-
-            <!-- Social Login -->
-
-            <div class="social-login">
-
-                <!-- Google -->
-
-                <button
-                    type="button"
-                    class="social-btn">
-
-                    <div class="social-left">
-
-                        <img
-                            src="assets/icons/google.png"
-                            alt="Google"
-                            class="social-icon">
-
-                        <span>
-
-                            Continuar con Google
-
-                        </span>
-
-                    </div>
-
-                </button>
-
-                <!-- Apple -->
-
-                <button
-                    type="button"
-                    class="social-btn">
-
-                    <div class="social-left">
-
-                        <img
-                            src="assets/icons/apple.png"
-                            alt="Apple"
-                            class="social-icon">
-
-                        <span>
-
-                            Continuar con Apple
-
-                        </span>
-
-                    </div>
-
-                </button>
-
-                <!-- Microsoft -->
-
-                <button
-                    type="button"
-                    class="social-btn">
-
-                    <div class="social-left">
-
-                        <img
-                            src="assets/icons/microsoft.png"
-                            alt="Microsoft"
-                            class="social-icon">
-
-                        <span>
-
-                            Continuar con Microsoft
-
-                        </span>
-
-                    </div>
-
-                </button>
-
-            </div>
-
-            <!-- Registro -->
-
-            <div class="register-link">
-
-                ¿Necesita acceso?
-
-                <a href="#">
-
-                    Solicitar acceso
-
-                </a>
-
-            </div>
-
-            <!-- Footer -->
-
-            <div class="login-footer">
-
-                <small>
-
-                    Versión 0.2.0
-
-                </small>
-
-                <small>
-
-                    © 2026 SparkByte Technologies
-
-                </small>
 
             </div>
 
@@ -339,7 +508,11 @@
 
     </section>
 
-</div>
+
+</main>
+
+
+<!-- SCRIPTS -->
 
 <script>
 
@@ -347,7 +520,11 @@
 
 </script>
 
-<script src="js/login.js"></script>
+<script src="js/core/auth.js"></script>
+
+<script src="js/config/language.js"></script>
+
+<script src="js/pages/login.js"></script>
 
 </body>
 

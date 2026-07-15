@@ -1,0 +1,253 @@
+/* ESPITALETA WELLNESS
+   DESIGN SYSTEM
+   Cards */
+
+/* CARD */
+
+.card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    width:100%;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-sm);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+}
+
+/* CARD HOVER */
+
+.card:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* CARD HEADER */
+
+.card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-md);
+
+    padding:var(--space-lg);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+/* CARD BODY */
+
+.card-body{
+
+    flex:1;
+
+    padding:var(--space-lg);
+
+}
+
+/* CARD FOOTER */
+
+.card-footer{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:var(--space-md);
+
+    padding:var(--space-lg);
+
+    border-top:1px solid var(--border);
+
+}
+
+/* CARD TITLE */
+
+.card-title{
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+/* CARD SUBTITLE */
+
+.card-subtitle{
+
+    font-size:.875rem;
+
+    color:var(--text-secondary);
+
+}
+
+/* CARD TEXT */
+
+.card-text{
+
+    color:var(--text-secondary);
+
+    line-height:1.7;
+
+}
+
+/* CARD ACTIONS */
+
+.card-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:var(--space-sm);
+
+}
+
+/* CARD ICON */
+
+.card-icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    background:var(--primary-light);
+
+    color:var(--primary);
+
+}
+
+.card-icon svg{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+/* METRIC CARD */
+
+.card-metric{
+
+    position:relative;
+
+}
+
+.card-metric .metric-value{
+
+    margin-top:var(--space-sm);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:var(--text-primary);
+
+}
+
+.card-metric .metric-label{
+
+    color:var(--text-secondary);
+
+    font-size:.875rem;
+
+}
+
+/* PATIENT CARD */
+
+.card-patient{
+
+    cursor:pointer;
+
+}
+
+/* ALERT CARD */
+
+.card-alert{
+
+    border-left:4px solid var(--warning);
+
+}
+
+/* SUCCESS CARD */
+
+.card-success{
+
+    border-left:4px solid var(--success);
+
+}
+
+/* DANGER CARD */
+
+.card-danger{
+
+    border-left:4px solid var(--danger);
+
+}
+
+/* INFO CARD */
+
+.card-info{
+
+    border-left:4px solid var(--primary);
+
+}
+
+/* COMPACT CARD */
+
+.card-compact .card-header,
+
+.card-compact .card-body,
+
+.card-compact .card-footer{
+
+    padding:var(--space-md);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .card-header,
+
+    .card-footer{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+}

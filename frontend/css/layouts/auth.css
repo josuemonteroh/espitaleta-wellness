@@ -1,0 +1,118 @@
+/* ESPITALETA WELLNESS
+   AUTHENTICATION LAYOUT */
+
+/* AUTH LAYOUT */
+
+.auth-layout{
+
+    display:grid;
+
+    grid-template-columns:55% 45%;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    background:var(--background);
+
+}
+
+/* BRAND PANEL */
+
+.auth-brand{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:3rem 4rem;
+
+    overflow:hidden;
+
+}
+
+/* LOGIN PANEL */
+
+.auth-login{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:2.5rem;
+
+    background:var(--surface);
+
+}
+
+/* LOGIN CONTAINER */
+
+.login-container{
+
+    width:100%;
+
+    max-width:700px;
+
+}
+
+/* LANGUAGE SELECTOR */
+
+.language-selector{
+
+    position:absolute;
+
+    top:1.25rem;
+
+    right:1.5rem;
+
+    z-index:10;
+
+    font-size:.85rem;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1024px){
+
+    .auth-layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .auth-brand{
+
+        display:none;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .auth-login{
+
+        padding:1.5rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .auth-login{
+
+        padding:1rem;
+
+    }
+
+}

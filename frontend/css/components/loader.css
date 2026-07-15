@@ -1,0 +1,155 @@
+/* ESPITALETA WELLNESS
+   DESIGN SYSTEM
+   Loader */
+
+/* LOADER */
+
+.loader{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* SPINNER */
+
+.spinner{
+
+    width:24px;
+
+    height:24px;
+
+    border:3px solid var(--border);
+
+    border-top-color:var(--primary);
+
+    border-radius:50%;
+
+    animation:spinner .8s linear infinite;
+
+}
+
+/* LOADER SIZES */
+
+.spinner-sm{
+
+    width:18px;
+
+    height:18px;
+
+    border-width:2px;
+
+}
+
+.spinner-md{
+
+    width:24px;
+
+    height:24px;
+
+}
+
+.spinner-lg{
+
+    width:40px;
+
+    height:40px;
+
+    border-width:4px;
+
+}
+
+/* LOADER COLORS */
+
+.spinner-primary{
+
+    border-top-color:var(--primary);
+
+}
+
+.spinner-accent{
+
+    border-top-color:var(--accent);
+
+}
+
+.spinner-success{
+
+    border-top-color:var(--success);
+
+}
+
+.spinner-danger{
+
+    border-top-color:var(--danger);
+
+}
+
+/* FULLSCREEN LOADER */
+
+.loader-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(3px);
+
+    z-index:9999;
+
+}
+
+/* LOADER CONTENT */
+
+.loader-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:var(--space-md);
+
+}
+
+/* LOADER TEXT */
+
+.loader-text{
+
+    color:var(--text-secondary);
+
+    font-size:.9rem;
+
+    font-weight:500;
+
+}
+
+/* ANIMATION */
+
+@keyframes spinner{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}

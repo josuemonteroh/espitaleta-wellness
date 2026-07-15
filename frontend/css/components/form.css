@@ -1,0 +1,343 @@
+/* ESPITALETA WELLNESS
+   DESIGN SYSTEM
+   Forms */
+
+/* FORM */
+
+.form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-lg);
+
+    width:100%;
+
+}
+
+/* FORM GROUP */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:var(--space-sm);
+
+    width:100%;
+
+}
+
+/* FORM ROW */
+
+.form-row{
+
+    display:flex;
+
+    gap:var(--space-md);
+
+    width:100%;
+
+}
+
+.form-row .form-group{
+
+    flex:1;
+
+}
+
+/* LABEL */
+
+.form-label{
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    color:var(--text-primary);
+
+}
+
+.required{
+
+    color:var(--danger);
+
+    margin-left:4px;
+
+}
+
+/* INPUT GROUP */
+
+.input-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 18px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius-md);
+
+    transition:var(--transition);
+
+}
+
+.input-group:hover{
+
+    border-color:var(--primary);
+
+}
+
+.input-group:focus-within{
+
+    border-color:rgba(47,137,167,.55);
+
+    box-shadow:0 0 0 2px rgba(47,137,167,.12);
+
+}
+
+/* ICON */
+
+.input-group svg{
+
+    width:20px;
+
+    height:20px;
+
+    color:var(--text-secondary);
+
+    flex-shrink:0;
+
+    transition:var(--transition);
+
+}
+
+.input-group:focus-within svg{
+
+    color:var(--primary);
+
+}
+
+/* INPUT */
+
+.input{
+
+    width:100%;
+
+    border:none !important;
+
+    outline:none;
+
+    box-shadow:none;
+
+    background:transparent;
+
+    padding:16px 0;
+
+    color:var(--text-primary);
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+}
+
+.input::placeholder{
+
+    color:var(--text-secondary);
+
+}
+
+/* TEXTAREA */
+
+.textarea{
+
+    min-height:140px;
+
+    resize:vertical;
+
+    padding:16px 0;
+
+}
+
+/* SELECT */
+
+.select{
+
+    width:100%;
+
+    border:none;
+
+    background:transparent;
+
+    outline:none;
+
+    padding:16px 0;
+
+    cursor:pointer;
+
+}
+
+/* CHECKBOX */
+
+.checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+    user-select:none;
+
+}
+
+.checkbox input{
+
+    width:18px;
+
+    height:18px;
+
+    accent-color:var(--primary);
+
+}
+
+/* RADIO */
+
+.radio{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    cursor:pointer;
+
+}
+
+.radio input{
+
+    accent-color:var(--primary);
+
+}
+
+/* PASSWORD TOGGLE */
+
+.password-toggle{
+
+    width:44px;
+
+    height:44px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    color:var(--text-secondary);
+
+    transition:var(--transition);
+
+    cursor:pointer;
+
+}
+
+.password-toggle svg{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+.password-toggle:hover{
+
+    color:var(--primary);
+
+    background:rgba(47,137,167,.08);
+
+}
+
+/* HELPER TEXT */
+
+.helper-text{
+
+    font-size:.8rem;
+
+    color:var(--text-secondary);
+
+}
+
+/* ERROR */
+
+.input-error{
+
+    border-color:var(--danger);
+
+}
+
+.input-error svg{
+
+    color:var(--danger);
+
+}
+
+.error-text{
+
+    font-size:.8rem;
+
+    color:var(--danger);
+
+}
+
+/* SUCCESS */
+
+.input-success{
+
+    border-color:var(--success);
+
+}
+
+.input-success svg{
+
+    color:var(--success);
+
+}
+
+/* DISABLED */
+
+.input-group.disabled{
+
+    background:#F1F5F9;
+
+    opacity:.65;
+
+    pointer-events:none;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .form-row{
+
+        flex-direction:column;
+
+    }
+
+}
