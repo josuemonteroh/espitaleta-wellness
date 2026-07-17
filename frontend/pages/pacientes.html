@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pacientes | Espitaleta Wellness</title>
+
+
+    <!-- ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+    <!-- STYLES -->
+
+    <link rel="stylesheet" href="../css/base/variables.css">
+    <link rel="stylesheet" href="../css/base/typography.css">
+    <link rel="stylesheet" href="../css/base/global.css">
+
+    <link rel="stylesheet" href="../css/layouts/dashboard.css">
+
+    <link rel="stylesheet" href="../css/components/sidebar.css">
+    <link rel="stylesheet" href="../css/components/card.css">
+    <link rel="stylesheet" href="../css/components/button.css">
+    <link rel="stylesheet" href="../css/components/table.css">
+
+    <link rel="stylesheet" href="../css/pages/patients.css">
+
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-layout">
+
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-brand">
+
+
+            <div class="brand-icon">
+
+                <i data-lucide="heart-pulse"></i>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    Espitaleta
+                </strong>
+
+                <span>
+                    Wellness
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <nav class="sidebar-menu">
+
+
+            <p class="menu-title">
+                GENERAL
+            </p>
+
+
+            <a href="dashboard.html">
+
+                <i data-lucide="layout-dashboard"></i>
+
+                Dashboard
+
+            </a>
+
+
+
+            <a href="pacientes.html" class="active">
+
+                <i data-lucide="users"></i>
+
+                Pacientes
+
+            </a>
+
+
+
+            <a href="metricas.html">
+
+                <i data-lucide="activity"></i>
+
+                Métricas
+
+            </a>
+
+
+
+
+            <p class="menu-title">
+                CLÍNICO
+            </p>
+
+
+
+            <a href="historial.html">
+
+                <i data-lucide="clipboard-list"></i>
+
+                Historial clínico
+
+            </a>
+
+
+
+
+            <a href="alertas.html">
+
+                <i data-lucide="triangle-alert"></i>
+
+                Alertas
+
+            </a>
+
+
+
+
+            <a href="reportes.html">
+
+                <i data-lucide="file-text"></i>
+
+                Reportes
+
+            </a>
+
+
+        </nav>
+
+
+
+
+        <a href="../login.html" class="logout">
+
+            <i data-lucide="log-out"></i>
+
+            Cerrar sesión
+
+        </a>
+
+
+
+    </aside>
+
+
+
+
+
+    <!-- MAIN -->
+
+
+    <main class="main-content">
+
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+
+            <div>
+
+                <h1>
+                    Pacientes
+                </h1>
+
+
+                <p>
+                    Gestión y seguimiento clínico de pacientes
+                </p>
+
+
+            </div>
+
+
+
+
+            <div class="header-user">
+
+
+                <button class="language-button">
+
+                    <i data-lucide="languages"></i>
+
+                    ES
+
+                </button>
+
+
+
+                <button class="notification-button" aria-label="Notificaciones">
+
+                    <i data-lucide="bell"></i>
+
+                </button>
+
+
+
+                <div class="user-profile">
+
+
+                    <i data-lucide="user-round"></i>
+
+
+                    <div>
+
+                        <strong>
+                            Dr. Espitaleta
+                        </strong>
+
+
+                        <span>
+                            Espitaleta Wellness
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+                <!-- PATIENT SUMMARY -->
+
+
+        <section class="patient-summary">
+
+
+            <div class="summary-card">
+
+
+                <div class="summary-icon">
+
+                    <i data-lucide="users"></i>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Pacientes en seguimiento
+                    </span>
+
+
+                    <strong>
+                        120
+                    </strong>
+
+
+                    <p>
+                        Bajo seguimiento clínico
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="summary-card">
+
+
+                <div class="summary-icon">
+
+                    <i data-lucide="scale"></i>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Métricas recientes
+                    </span>
+
+
+                    <strong>
+                        18
+                    </strong>
+
+
+                    <p>
+                        Actualizaciones recientes
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="summary-card">
+
+
+                <div class="summary-icon">
+
+                    <i data-lucide="triangle-alert"></i>
+
+                </div>
+
+
+
+                <div>
+
+                    <span>
+                        Pacientes con alerta
+                    </span>
+
+
+                    <strong>
+                        12
+                    </strong>
+
+
+                    <p>
+                        Requieren revisión
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- PATIENT CONTROLS -->
+
+
+        <section class="patients-container">
+
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Lista de pacientes
+                    </h2>
+
+
+                    <p>
+                        Consulte información clínica actualizada
+                    </p>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="patients-actions">
+
+
+
+                <div class="search-box">
+
+
+                    <i data-lucide="search"></i>
+
+
+                    <label for="patient-search" class="visually-hidden">
+                        Buscar paciente
+                    </label>
+
+                    <input
+                        type="search"
+                        placeholder="Buscar paciente..."
+                        id="patient-search"
+                        autocomplete="off"
+                    >
+
+
+                </div>
+
+                <div class="filter-group">
+
+
+                    <button class="filter-button">
+
+                        <i data-lucide="filter"></i>
+
+                        Filtros
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+            <p class="results-count" aria-live="polite">
+                2 pacientes
+            </p>
+
+                        <!-- PATIENT TABLE -->
+
+
+            <div class="table-container">
+
+
+
+                <table class="clinical-table">
+
+
+                    <thead>
+
+
+                        <tr>
+
+
+                            <th>
+                                Paciente
+                            </th>
+
+
+                            <th>
+                                Identificación
+                            </th>
+
+
+                            <th>
+                                Peso reciente
+                            </th>
+
+
+                            <th>
+                                IMC
+                            </th>
+
+
+                            <th>
+                                Última medición
+                            </th>
+
+
+                            <th>
+                                Estado
+                            </th>
+
+
+                            <th>
+                                Acción
+                            </th>
+
+
+                        </tr>
+
+
+                    </thead>
+
+
+
+
+
+                    <tbody>
+
+
+
+                        <tr>
+
+
+                            <td>
+
+
+                                <div class="patient-info">
+
+
+                                    <div class="patient-avatar">
+
+                                        <i data-lucide="user-round"></i>
+
+                                    </div>
+
+
+
+                                    <div>
+
+
+                                        <strong>
+                                            María Rodríguez
+                                        </strong>
+
+
+                                        <span>
+                                            Seguimiento nutricional
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+                                ID-00124
+                            </td>
+
+
+
+
+
+                            <td>
+
+                                <strong>
+                                    72.5 kg
+                                </strong>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+                                24.8
+                            </td>
+
+
+
+
+
+                            <td>
+                                Hoy
+                            </td>
+
+
+
+
+
+                            <td>
+
+                                <span class="status stable">
+
+                                    Estable
+
+                                </span>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+
+
+                                <a href="historial.html"
+                                   class="table-action">
+
+
+                                    Ver expediente
+
+
+                                    <i data-lucide="arrow-right"></i>
+
+
+                                </a>
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+
+
+
+
+
+                        <tr>
+
+
+                            <td>
+
+
+                                <div class="patient-info">
+
+
+                                    <div class="patient-avatar">
+
+                                        <i data-lucide="user-round"></i>
+
+                                    </div>
+
+
+
+                                    <div>
+
+
+                                        <strong>
+                                            Carlos Vargas
+                                        </strong>
+
+
+                                        <span>
+                                            Control clínico
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+                                ID-00125
+                            </td>
+
+
+
+
+
+                            <td>
+
+                                <strong>
+                                    94.0 kg
+                                </strong>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+                                31.2
+                            </td>
+
+
+
+
+
+                            <td>
+                                Hace 3 días
+                            </td>
+
+
+
+
+
+                            <td>
+
+
+                                <span class="status review">
+
+                                    Revisar
+
+                                </span>
+
+
+                            </td>
+
+
+
+
+
+                            <td>
+
+
+                                <a href="historial.html"
+                                   class="table-action">
+
+
+                                    Ver expediente
+
+
+                                    <i data-lucide="arrow-right"></i>
+
+
+                                </a>
+
+
+                            </td>
+
+
+
+                        </tr>
+
+
+
+                    </tbody>
+
+
+                </table>
+
+
+                <div class="table-empty">
+
+                    <i data-lucide="search-x"></i>
+
+                    <strong>
+                        No se encontraron pacientes
+                    </strong>
+
+                    <p>
+                        Intenta con otro nombre o número de identificación.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+
+        <footer class="dashboard-footer">
+
+
+            <span>
+                © 2026 Espitaleta Wellness
+            </span>
+
+
+            <span>
+                Plataforma de seguimiento clínico
+            </span>
+
+
+        </footer>
+
+
+
+
+    </main>
+
+
+</div>
+
+
+<!-- SCRIPTS -->
+
+
+<script src="../js/core/auth.js"></script>
+
+<script src="../js/config/language.js"></script>
+
+<script src="../js/pages/pacientes.js"></script>
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+</body>
+
+</html>

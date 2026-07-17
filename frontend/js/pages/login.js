@@ -168,15 +168,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("login-form");
 
 
-
     if(loginForm){
-
 
         loginForm.addEventListener("submit",(event)=>{
 
-
             event.preventDefault();
-
 
 
             const email =

@@ -10,3 +10,4 @@ services:
 
   database:
     container_name: nyvora_database
+

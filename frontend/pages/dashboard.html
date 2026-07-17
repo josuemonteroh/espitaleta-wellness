@@ -6,514 +6,1087 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard | Espitaleta Wellness</title>
+    <title>
+        Dashboard Clínico | Espitaleta Wellness
+    </title>
 
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
 
 </head>
 
+
 <body>
 
-<div class="dashboard">
+<div class="dashboard-layout">
+
+
+    <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
-        <div class="logo">
-            <img src="../assets/logo.png" alt="Espitaleta Wellness">
+        <div class="sidebar-brand">
+
+            <div class="brand-mark">
+                <i data-lucide="heart-pulse"></i>
+            </div>
+
+            <div class="brand-text">
+                <strong>Espitaleta</strong>
+                <span>Wellness</span>
+            </div>
+
         </div>
 
-        <nav>
 
-            <ul>
+        <nav class="sidebar-navigation">
 
-                <li class="active">
-                    <a href="dashboard.html">📊 Dashboard</a>
-                </li>
+            <span class="nav-label">
+                General
+            </span>
 
-                <li>
-                    <a href="pacientes.html">👥 Pacientes</a>
-                </li>
 
-                <li>
-                    <a href="#">📈 Métricas</a>
-                </li>
+            <a href="dashboard.html" class="active">
 
-                <li>
-                    <a href="#">📋 Historial</a>
-                </li>
+                <i data-lucide="layout-dashboard"></i>
 
-                <li>
-                    <a href="#">🚨 Alertas</a>
-                </li>
+                <span>
+                    Dashboard
+                </span>
 
-                <li>
-                    <a href="#">⚙️ Configuración</a>
-                </li>
+            </a>
 
-                <li>
-                    <a href="../login.html">🚪 Cerrar Sesión</a>
-                </li>
 
-            </ul>
+            <a href="pacientes.html">
+
+                <i data-lucide="users"></i>
+
+                <span>
+                    Pacientes
+                </span>
+
+            </a>
+
+
+            <a href="metricas.html">
+
+                <i data-lucide="activity"></i>
+
+                <span>
+                    Métricas
+                </span>
+
+            </a>
+
+
+
+            <span class="nav-label">
+                Clínico
+            </span>
+
+
+            <a href="historial.html">
+
+                <i data-lucide="clipboard-list"></i>
+
+                <span>
+                    Historial clínico
+                </span>
+
+            </a>
+
+
+            <a href="alertas.html">
+
+                <i data-lucide="triangle-alert"></i>
+
+                <span>
+                    Alertas
+                </span>
+
+                <span class="nav-badge" id="alerts-count">
+                    12
+                </span>
+
+            </a>
+
+
+            <a href="reportes.html">
+
+                <i data-lucide="file-text"></i>
+
+                <span>
+                    Reportes
+                </span>
+
+            </a>
+
 
         </nav>
 
+
+        <div class="sidebar-footer">
+
+            <a href="../login.html">
+
+                <i data-lucide="log-out"></i>
+
+                <span>
+                    Cerrar sesión
+                </span>
+
+            </a>
+
+        </div>
+
+
     </aside>
 
-    <main class="content">
 
-        <div class="header">
+    <!-- MAIN CONTENT -->
 
-            <div>
 
-                <h1>Panel de Control</h1>
+    <main class="dashboard-content">
+
+
+        <!-- HEADER -->
+
+
+        <header class="dashboard-header">
+
+
+            <div class="header-title">
+
+                <h1>
+                    Dashboard Clínico
+                </h1>
 
                 <p>
-                    Resumen general de pacientes e indicadores clínicos.
+                    Seguimiento de pacientes y evolución clínica
                 </p>
 
             </div>
 
-            <div class="welcome">
 
-                <h3>👨‍⚕️ Dr. Espitaleta</h3>
 
-                <span>
-                    Viernes, 26 de junio de 2026
-                </span>
+            <div class="header-actions">
 
-            </div>
 
-        </div>
+                <button class="language-button">
 
-        <!-- Barra superior -->
+                    <i data-lucide="languages"></i>
 
-        <div class="panel">
+                    <span>
+                        ES
+                    </span>
 
-            <div style="display:flex; gap:15px; align-items:center; flex-wrap:wrap;">
-
-                <input
-                    class="search-box"
-                    type="text"
-                    placeholder="🔍 Buscar paciente...">
-
-                <button class="btn-primary">
-
-                    ➕ Registrar Paciente
+                    <i data-lucide="chevron-down"></i>
 
                 </button>
 
-            </div>
 
-        </div>
 
-        <br>
+                <button class="icon-button">
 
-        <!-- KPI -->
+                    <i data-lucide="bell"></i>
 
-        <section class="kpi-cards">
+                </button>
 
-            <div class="card">
 
-                <div class="icon">👥</div>
 
-                <h2>128</h2>
+                <div class="user-profile">
 
-                <p>Pacientes Registrados</p>
 
-                <small>Total del sistema</small>
+                    <div class="user-avatar">
 
-            </div>
+                        <i data-lucide="user"></i>
 
-            <div class="card">
+                    </div>
 
-                <div class="icon">📊</div>
 
-                <h2>532</h2>
 
-                <p>Métricas Registradas</p>
+                    <div class="user-info">
 
-                <small>Actualizado hoy</small>
+                        <strong>
+                            Dr. Espitaleta
+                        </strong>
 
-            </div>
+                        <span>
+                            Espitaleta Wellness
+                        </span>
 
-            <div class="card">
+                    </div>
 
-                <div class="icon">🚨</div>
 
-                <h2>12</h2>
+                </div>
 
-                <p>Alertas Clínicas</p>
-
-                <small>Requieren revisión</small>
 
             </div>
 
-            <div class="card">
 
-                <div class="icon">📈</div>
+        </header>
 
-                <h2>94%</h2>
+                <!-- CLINICAL HERO -->
 
-                <p>Seguimiento Completo</p>
 
-                <small>Meta mensual</small>
+        <section class="clinical-hero">
+
+
+            <div class="hero-content">
+
+                <span class="hero-label">
+                    Seguimiento clínico
+                </span>
+
+
+                <h2>
+                    Buenos días, Dr. Espitaleta
+                </h2>
+
+
+                <p>
+                    Consulte la evolución de sus pacientes,
+                    métricas recientes y alertas clínicas
+                    desde una vista centralizada.
+                </p>
+
 
             </div>
+
+
+            <div class="hero-actions">
+
+                <a href="pacientes.html" class="primary-button">
+
+                    <i data-lucide="users"></i>
+
+                    Ver pacientes
+
+                </a>
+
+            </div>
+
 
         </section>
 
-        <section class="dashboard-grid">
 
-            <div class="panel">
+        <!-- CLINICAL SUMMARY -->
 
-                <h2>Últimos Pacientes</h2>
 
-                <table>
+        <section class="clinical-summary">
+
+
+            <div class="summary-content">
+
+
+                <div class="summary-icon">
+
+                    <i data-lucide="heart-pulse"></i>
+
+                </div>
+
+
+
+                <div class="summary-information">
+
+                    <span>
+                        Estado clínico general
+                    </span>
+
+                    <h2>
+                        Seguimiento integral de pacientes
+                    </h2>
+
+                    <p>
+                        Supervise métricas, alertas y evolución
+                        clínica desde una vista centralizada.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="summary-data">
+
+
+                <div class="summary-item">
+
+                    <strong id="summary-patients">
+                        120
+                    </strong>
+
+                    <span>
+                        Pacientes activos
+                    </span>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <strong id="summary-alerts">
+                        12
+                    </strong>
+
+                    <span>
+                        Alertas activas
+                    </span>
+
+                </div>
+
+
+
+                <div class="summary-item">
+
+                    <strong id="summary-recommendations">
+                        8
+                    </strong>
+
+                    <span>
+                        Recomendaciones pendientes
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+        <!-- INDICATORS -->
+
+
+        <section class="clinical-indicators">
+
+
+            <article class="indicator-card">
+
+                <div class="indicator-icon">
+
+                    <i data-lucide="users"></i>
+
+                </div>
+
+
+                <div class="indicator-content">
+
+                    <span>
+                        Pacientes registrados
+                    </span>
+
+                    <h3 id="total-patients">
+                        120
+                    </h3>
+
+                    <p>
+                        Bajo seguimiento clínico
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="indicator-card">
+
+                <div class="indicator-icon">
+
+                    <i data-lucide="triangle-alert"></i>
+
+                </div>
+
+
+                <div class="indicator-content">
+
+                    <span>
+                        Alertas activas
+                    </span>
+
+                    <h3 id="active-alerts">
+                        12
+                    </h3>
+
+                    <p>
+                        Requieren revisión
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="indicator-card">
+
+                <div class="indicator-icon">
+
+                    <i data-lucide="clipboard-check"></i>
+
+                </div>
+
+
+                <div class="indicator-content">
+
+                    <span>
+                        Recomendaciones
+                    </span>
+
+                    <h3 id="pending-recommendations">
+                        8
+                    </h3>
+
+                    <p>
+                        Pendientes de seguimiento
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="indicator-card">
+
+                <div class="indicator-icon">
+
+                    <i data-lucide="activity"></i>
+
+                </div>
+
+
+                <div class="indicator-content">
+
+                    <span>
+                        Métricas recientes
+                    </span>
+
+                    <h3 id="recent-metrics">
+                        18
+                    </h3>
+
+                    <p>
+                        Registros actualizados
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+                <!-- PATIENT FOLLOW UP -->
+
+
+        <section class="dashboard-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Pacientes en seguimiento
+                    </h2>
+
+                    <p>
+                        Últimas actualizaciones clínicas registradas
+                    </p>
+
+                </div>
+
+
+                <a href="pacientes.html" class="section-action">
+
+                    Ver todos
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+
+
+            <div class="table-container">
+
+
+                <table class="patients-table">
+
 
                     <thead>
 
                         <tr>
 
-                            <th>Paciente</th>
+                            <th>
+                                Paciente
+                            </th>
 
-                            <th>Edad</th>
+                            <th>
+                                Peso reciente
+                            </th>
 
-                            <th>Último Control</th>
+                            <th>
+                                IMC
+                            </th>
 
-                            <th>Estado</th>
+                            <th>
+                                Última medición
+                            </th>
 
-                            <th>Expediente</th>
+                            <th>
+                                Estado
+                            </th>
+
+                            <th>
+                                Acción
+                            </th>
 
                         </tr>
 
                     </thead>
 
-                    <tbody>
 
-                        <tr>
-
-                            <td>👤 María Gómez</td>
-
-                            <td>34</td>
-
-                            <td>Hoy</td>
-
-                            <td>
-
-                                <span class="badge success">
-
-                                    🟢 Activo
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="#" class="action-link">
-
-                                    👁 Abrir
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>👤 Carlos Vargas</td>
-
-                            <td>42</td>
-
-                            <td>Ayer</td>
-
-                            <td>
-
-                                <span class="badge warning">
-
-                                    🟡 Seguimiento
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="#" class="action-link">
-
-                                    👁 Abrir
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>👤 Ana Rodríguez</td>
-
-                            <td>29</td>
-
-                            <td>20 Jun</td>
-
-                            <td>
-
-                                <span class="badge success">
-
-                                    🟢 Activo
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="#" class="action-link">
-
-                                    👁 Abrir
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                                                <tr>
-
-                            <td>👤 Diego Soto</td>
-
-                            <td>37</td>
-
-                            <td>18 Jun</td>
-
-                            <td>
-
-                                <span class="badge danger">
-
-                                    🔴 Inactivo
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="#" class="action-link">
-
-                                    👁 Abrir
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>👤 Laura Méndez</td>
-
-                            <td>31</td>
-
-                            <td>15 Jun</td>
-
-                            <td>
-
-                                <span class="badge success">
-
-                                    🟢 Activo
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <a href="#" class="action-link">
-
-                                    👁 Abrir
-
-                                </a>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-            <div class="panel">
-
-                <h2>Alertas Recientes</h2>
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>Paciente</th>
-
-                            <th>Alerta</th>
-
-                            <th>Prioridad</th>
-
-                        </tr>
-
-                    </thead>
 
                     <tbody>
 
+
                         <tr>
 
-                            <td>Carlos Vargas</td>
-
-                            <td>Peso fuera de rango</td>
 
                             <td>
 
-                                <span class="badge danger">
+                                <div class="patient-info">
 
-                                    🔴 Alta
+                                    <div class="patient-avatar">
 
+                                        <i data-lucide="user"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            María Rodríguez
+                                        </strong>
+
+                                        <span>
+                                            ID: 00124
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <strong>
+                                    72.5 kg
+                                </strong>
+                            </td>
+
+
+                            <td>
+                                24.8
+                            </td>
+
+
+                            <td>
+                                Hoy
+                            </td>
+
+
+                            <td>
+
+                                <span class="status status-success">
+                                    Estable
                                 </span>
 
                             </td>
 
-                        </tr>
-
-                        <tr>
-
-                            <td>María Gómez</td>
-
-                            <td>Control pendiente</td>
 
                             <td>
 
-                                <span class="badge warning">
+                                <button class="table-button">
 
-                                    🟡 Media
+                                    Ver expediente
 
+                                    <i data-lucide="arrow-right"></i>
+
+                                </button>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+
+
+                        <tr>
+
+
+                            <td>
+
+                                <div class="patient-info">
+
+                                    <div class="patient-avatar">
+
+                                        <i data-lucide="user"></i>
+
+                                    </div>
+
+
+                                    <div>
+
+                                        <strong>
+                                            Carlos Vargas
+                                        </strong>
+
+                                        <span>
+                                            ID: 00125
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                <strong>
+                                    94.0 kg
+                                </strong>
+                            </td>
+
+
+                            <td>
+                                31.2
+                            </td>
+
+
+                            <td>
+                                Hace 3 días
+                            </td>
+
+
+                            <td>
+
+                                <span class="status status-warning">
+                                    Revisar
                                 </span>
 
                             </td>
 
-                        </tr>
-
-                        <tr>
-
-                            <td>Ana Rodríguez</td>
-
-                            <td>Actualización completada</td>
 
                             <td>
 
-                                <span class="badge success">
+                                <button class="table-button">
 
-                                    🟢 Baja
+                                    Ver expediente
 
-                                </span>
+                                    <i data-lucide="arrow-right"></i>
+
+                                </button>
 
                             </td>
 
+
                         </tr>
+
 
                     </tbody>
 
+
                 </table>
 
+
             </div>
+
 
         </section>
 
-        <br>
 
-        <div class="panel">
 
-            <h2>Próximos Controles</h2>
 
-            <table>
 
-                <thead>
 
-                    <tr>
 
-                        <th>Hora</th>
+        <!-- CLINICAL PANELS -->
 
-                        <th>Paciente</th>
 
-                        <th>Consulta</th>
+        <section class="clinical-panels">
 
-                        <th>Profesional</th>
 
-                    </tr>
+            <article class="panel-card">
 
-                </thead>
 
-                <tbody>
+                <div class="panel-header">
 
-                    <tr>
+                    <div>
 
-                        <td>09:00</td>
+                        <h2>
+                            Alertas clínicas
+                        </h2>
 
-                        <td>María Gómez</td>
+                        <p>
+                            Pacientes que requieren revisión
+                        </p>
 
-                        <td>Control Nutricional</td>
+                    </div>
 
-                        <td>Dr. Espitaleta</td>
 
-                    </tr>
+                    <i data-lucide="triangle-alert"></i>
 
-                    <tr>
+                </div>
 
-                        <td>10:30</td>
+                <div class="panel-list">
 
-                        <td>Carlos Vargas</td>
 
-                        <td>Seguimiento IMC</td>
+                    <div class="panel-item">
 
-                        <td>Dr. Espitaleta</td>
 
-                    </tr>
+                        <div class="panel-icon">
 
-                    <tr>
+                            <i data-lucide="activity"></i>
 
-                        <td>11:45</td>
+                        </div>
 
-                        <td>Ana Rodríguez</td>
 
-                        <td>Valoración General</td>
+                        <div>
 
-                        <td>Dr. Espitaleta</td>
+                            <strong>
+                                Cambio de peso detectado
+                            </strong>
 
-                    </tr>
+                            <span>
+                                María Rodríguez
+                            </span>
 
-                    <tr>
+                        </div>
 
-                        <td>14:00</td>
 
-                        <td>Laura Méndez</td>
+                    </div>
 
-                        <td>Control de Peso</td>
 
-                        <td>Dr. Espitaleta</td>
+                    <div class="panel-item">
 
-                    </tr>
 
-                </tbody>
+                        <div class="panel-icon">
 
-            </table>
+                            <i data-lucide="clock"></i>
 
-        </div>
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Seguimiento pendiente
+                            </strong>
+
+                            <span>
+                                Carlos Vargas
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <a href="alertas.html" class="panel-link">
+
+                    Ver alertas
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+
+            </article>
+
+            <article class="panel-card">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            Recomendaciones pendientes
+                        </h2>
+
+                        <p>
+                            Acciones clínicas por revisar
+                        </p>
+
+                    </div>
+
+
+                    <i data-lucide="clipboard-check"></i>
+
+
+                </div>
+
+
+
+                <div class="panel-list">
+
+
+                    <div class="panel-item">
+
+
+                        <div class="panel-icon">
+
+                            <i data-lucide="clipboard-list"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Actualizar seguimiento nutricional
+                            </strong>
+
+                            <span>
+                                María Rodríguez
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="panel-item">
+
+
+                        <div class="panel-icon">
+
+                            <i data-lucide="activity"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Revisar evolución de métricas
+                            </strong>
+
+                            <span>
+                                Carlos Vargas
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <a href="historial.html" class="panel-link">
+
+                    Ver seguimiento
+
+                    <i data-lucide="arrow-right"></i>
+
+                </a>
+
+
+            </article>
+
+
+        </section>
+
+                <!-- CLINICAL EVOLUTION -->
+
+
+        <section class="dashboard-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Evolución clínica
+                    </h2>
+
+                    <p>
+                        Seguimiento de métricas registradas
+                    </p>
+
+                </div>
+
+
+                <button class="filter-button">
+
+                    Últimos 30 días
+
+                    <i data-lucide="chevron-down"></i>
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+            <div class="evolution-grid">
+
+
+                <article class="evolution-card">
+
+
+                    <div class="card-header">
+
+                        <span>
+                            Evolución de peso
+                        </span>
+
+                    </div>
+
+
+                    <div class="chart-container">
+
+                        <canvas id="weight-chart"></canvas>
+
+                    </div>
+
+
+                </article>
+
+
+
+
+
+                <article class="evolution-card">
+
+
+                    <div class="card-header">
+
+                        <span>
+                            Resumen de métricas
+                        </span>
+
+                    </div>
+
+
+
+                    <div class="metrics-summary">
+
+
+                        <div class="summary-metric">
+
+                            <span>
+                                Mediciones recientes
+                            </span>
+
+                            <strong id="recent-measurements">
+                                18
+                            </strong>
+
+                        </div>
+
+
+
+
+                        <div class="summary-metric">
+
+                            <span>
+                                Peso promedio
+                            </span>
+
+                            <strong id="average-weight">
+                                78.4 kg
+                            </strong>
+
+                        </div>
+
+
+
+
+                        <div class="summary-metric">
+
+                            <span>
+                                IMC promedio
+                            </span>
+
+                            <strong id="average-bmi">
+                                26.3
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+        <!-- FOOTER -->
+
+
+        <footer class="dashboard-footer">
+
+
+            <p>
+                © 2026 Espitaleta Wellness
+            </p>
+
+
+            <span>
+                Plataforma de seguimiento clínico
+            </span>
+
+
+        </footer>
+
 
     </main>
 
+
 </div>
+
+
+<!-- SCRIPTS -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+
+<script src="../js/core/auth.js"></script>
+
+<script src="../js/config/language.js"></script>
+
+<script src="../js/pages/dashboard.js"></script>
+
 
 </body>
 
