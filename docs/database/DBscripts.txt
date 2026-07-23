@@ -1,0 +1,338 @@
+/*
+  PostgreSQL 16+ Database Script (ENGLISH)
+  Intelligent Platform for Nutritional Tracking and Weight Control
+
+  HOW TO USE THIS SCRIPT
+  ----------------------
+  1) Connect to your PostgreSQL server *without* selecting a database
+     (e.g. using the default "postgres" database):
+
+        psql -U postgres -h localhost -p 5432
+
+  2) Run ONLY the "CREATE DATABASE ..." block below (up to the first \c command),
+     or copy/paste it into psql / pgAdmin and execute.
+
+  3) Then reconnect / switch to the new database (see the "\c nutrition_db" line)
+     and run the rest of the script (schemas, tables, etc.).
+
+  NOTE:
+  - Replace "nutrition_db" with a different database name if you want.
+  - Replace "postgres" in OWNER if your admin user is different.
+*/
+
+-- =========================================================
+-- 0. CREATE DATABASE (RUN THIS FIRST, FROM A SUPERUSER/ADMIN DB)
+-- =========================================================
+
+-- Create the application database
+CREATE DATABASE nutrition_db
+    WITH
+        OWNER = postgres
+        ENCODING = 'UTF8'
+        LC_COLLATE = 'C'
+        LC_CTYPE = 'C'
+        TEMPLATE = template0
+        CONNECTION LIMIT = -1;
+
+-- IMPORTANT:
+-- After this, connect to the new database before running the rest:
+-- In psql:
+--   \c nutrition_db
+-- Or from terminal:
+--   psql -U postgres -d nutrition_db
+
+-- The rest of this script assumes you are already connected to nutrition_db
+
+-- (If you paste everything at once into psql, the following command will
+-- attempt to switch connection to the new DB automatically in psql:)
+\c nutrition_db
+
+-- =========================================================
+-- 1. BASIC CONFIGURATION
+-- =========================================================
+
+-- Optional: dedicated schema for the platform
+CREATE SCHEMA IF NOT EXISTS nutrition_platform;
+SET search_path TO nutrition_platform;
+
+-- =========================================================
+-- 2. MASTER TABLES: ROLES, USERS, DOCTORS, PATIENTS
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- RF-DB-001 Roles
+-- ---------------------------------------------------------
+CREATE TABLE roles (
+    id           BIGSERIAL PRIMARY KEY,
+    name         VARCHAR(50) NOT NULL UNIQUE,
+    description  TEXT,
+    created_at   TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at   TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Expected values: ADMIN, DOCTOR, PATIENT
+INSERT INTO roles (name, description)
+VALUES
+    ('ADMIN',  'System administrator'),
+    ('DOCTOR', 'Doctor responsible for patients'),
+    ('PATIENT','Patient user')
+ON CONFLICT (name) DO NOTHING;
+
+-- ---------------------------------------------------------
+-- RF-DB-002 Users
+-- ---------------------------------------------------------
+CREATE TABLE users (
+    id             BIGSERIAL PRIMARY KEY,
+    role_id        BIGINT NOT NULL REFERENCES roles(id),
+    email          VARCHAR(255) NOT NULL UNIQUE,
+    password_hash  TEXT NOT NULL,
+    is_active      BOOLEAN NOT NULL DEFAULT TRUE,
+    last_login     TIMESTAMPTZ,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- ---------------------------------------------------------
+-- RF-DB-003 Doctors
+-- ---------------------------------------------------------
+CREATE TABLE doctors (
+    id          BIGSERIAL PRIMARY KEY,
+    user_id     BIGINT NOT NULL UNIQUE REFERENCES users(id),
+    first_name  VARCHAR(100) NOT NULL,
+    last_name   VARCHAR(100) NOT NULL,
+    specialty   VARCHAR(150),
+    phone       VARCHAR(50),
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- ---------------------------------------------------------
+-- RF-DB-004 Patients
+-- ---------------------------------------------------------
+CREATE TYPE gender_type AS ENUM ('MALE', 'FEMALE', 'OTHER');
+
+CREATE TABLE patients (
+    id          BIGSERIAL PRIMARY KEY,
+    doctor_id   BIGINT NOT NULL REFERENCES doctors(id),
+    user_id     BIGINT REFERENCES users(id),
+    first_name  VARCHAR(100) NOT NULL,
+    last_name   VARCHAR(100) NOT NULL,
+    gender      gender_type NOT NULL,
+    birth_date  DATE NOT NULL,
+    height_cm   NUMERIC(5,2),
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- =========================================================
+-- 3. METRIC TABLES: MEASUREMENTS, VITALS, SLEEP, ACTIVITY, NUTRITION
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- RF-DB-005 Measurements (body composition)
+-- ---------------------------------------------------------
+CREATE TABLE measurements (
+    id                   BIGSERIAL PRIMARY KEY,
+    patient_id           BIGINT NOT NULL REFERENCES patients(id),
+    measurement_date     TIMESTAMPTZ NOT NULL,
+    weight_kg            NUMERIC(6,2),
+    body_fat_percentage  NUMERIC(5,2),
+    muscle_mass_kg       NUMERIC(6,2),
+    bmi                  NUMERIC(5,2),
+    created_at           TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Required index: IDX_PATIENT_MEASUREMENTS (patient_id, measurement_date)
+CREATE INDEX idx_patient_measurements
+    ON measurements (patient_id, measurement_date);
+
+-- ---------------------------------------------------------
+-- RF-DB-006 Vitals (vital signs)
+-- ---------------------------------------------------------
+CREATE TABLE vitals (
+    id                BIGSERIAL PRIMARY KEY,
+    patient_id        BIGINT NOT NULL REFERENCES patients(id),
+    measurement_date  TIMESTAMPTZ NOT NULL,
+    heart_rate        INTEGER,
+    hrv               INTEGER,
+    spo2              INTEGER,
+    created_at        TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Required index: IDX_PATIENT_VITALS (patient_id, measurement_date)
+CREATE INDEX idx_patient_vitals
+    ON vitals (patient_id, measurement_date);
+
+-- ---------------------------------------------------------
+-- RF-DB-007 Sleep
+-- ---------------------------------------------------------
+CREATE TABLE sleep (
+    id             BIGSERIAL PRIMARY KEY,
+    patient_id     BIGINT NOT NULL REFERENCES patients(id),
+    sleep_date     DATE NOT NULL,
+    sleep_duration NUMERIC(5,2),   -- total hours
+    deep_sleep     NUMERIC(5,2),   -- units (hours/minutes) as per app logic
+    light_sleep    NUMERIC(5,2),
+    rem_sleep      NUMERIC(5,2),
+    sleep_score    INTEGER,
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Required index: IDX_PATIENT_SLEEP (patient_id, sleep_date)
+CREATE INDEX idx_patient_sleep
+    ON sleep (patient_id, sleep_date);
+
+-- ---------------------------------------------------------
+-- RF-DB-008 Activity
+-- ---------------------------------------------------------
+CREATE TABLE activity (
+    id               BIGSERIAL PRIMARY KEY,
+    patient_id       BIGINT NOT NULL REFERENCES patients(id),
+    activity_date    DATE NOT NULL,
+    steps            INTEGER,
+    distance_km      NUMERIC(6,2),
+    calories_burned  NUMERIC(8,2),
+    exercise_minutes INTEGER,
+    created_at       TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Required index: IDX_PATIENT_ACTIVITY (patient_id, activity_date)
+CREATE INDEX idx_patient_activity
+    ON activity (patient_id, activity_date);
+
+-- ---------------------------------------------------------
+-- RF-DB-009 Nutrition
+-- ---------------------------------------------------------
+CREATE TABLE nutrition (
+    id             BIGSERIAL PRIMARY KEY,
+    patient_id     BIGINT NOT NULL REFERENCES patients(id),
+    nutrition_date DATE NOT NULL,
+    calories       NUMERIC(8,2),
+    protein        NUMERIC(8,2),
+    carbohydrates  NUMERIC(8,2),
+    fat            NUMERIC(8,2),
+    water_ml       NUMERIC(8,2),
+    created_at     TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- Required index: IDX_PATIENT_NUTRITION (patient_id, nutrition_date)
+CREATE INDEX idx_patient_nutrition
+    ON nutrition (patient_id, nutrition_date);
+
+-- =========================================================
+-- 4. CLINICAL TABLES: ALERTS, RECOMMENDATIONS, MEDICAL_NOTES
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- RF-DB-010 Alerts
+-- ---------------------------------------------------------
+CREATE TYPE alert_severity AS ENUM ('LOW', 'MEDIUM', 'HIGH', 'CRITICAL');
+
+CREATE TABLE alerts (
+    id          BIGSERIAL PRIMARY KEY,
+    patient_id  BIGINT NOT NULL REFERENCES patients(id),
+    severity    alert_severity NOT NULL,
+    category    VARCHAR(100) NOT NULL,
+    message     TEXT NOT NULL,
+    status      VARCHAR(50) NOT NULL, -- e.g. ACTIVE, RESOLVED
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    resolved_at TIMESTAMPTZ
+);
+
+-- ---------------------------------------------------------
+-- RF-DB-011 Recommendations
+-- ---------------------------------------------------------
+CREATE TYPE recommendation_priority AS ENUM ('LOW', 'MEDIUM', 'HIGH');
+
+CREATE TABLE recommendations (
+    id          BIGSERIAL PRIMARY KEY,
+    patient_id  BIGINT NOT NULL REFERENCES patients(id),
+    priority    recommendation_priority NOT NULL,
+    title       VARCHAR(255) NOT NULL,
+    description TEXT,
+    status      VARCHAR(50) NOT NULL, -- e.g. ACTIVE, COMPLETED
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- ---------------------------------------------------------
+-- RF-DB-012 Medical Notes
+-- ---------------------------------------------------------
+CREATE TABLE medical_notes (
+    id          BIGSERIAL PRIMARY KEY,
+    patient_id  BIGINT NOT NULL REFERENCES patients(id),
+    doctor_id   BIGINT NOT NULL REFERENCES doctors(id),
+    note        TEXT NOT NULL,
+    created_at  TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- =========================================================
+-- 5. AUDIT
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- RF-DB-013 Audit Logs
+-- ---------------------------------------------------------
+CREATE TABLE audit_logs (
+    id            BIGSERIAL PRIMARY KEY,
+    user_id       BIGINT REFERENCES users(id),
+    action        VARCHAR(100) NOT NULL,
+    entity        VARCHAR(100) NOT NULL,
+    entity_id     BIGINT NOT NULL,
+    timestamp     TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    metadata_json JSONB
+);
+
+-- =========================================================
+-- 6. SUPPORTING VIEW (OPTIONAL, PER API ↔ DB MAPPING)
+-- =========================================================
+
+CREATE VIEW v_patients_with_doctors AS
+SELECT
+    p.id         AS patient_id,
+    p.first_name AS patient_first_name,
+    p.last_name  AS patient_last_name,
+    d.id         AS doctor_id,
+    d.first_name AS doctor_first_name,
+    d.last_name  AS doctor_last_name
+FROM patients p
+JOIN doctors d ON p.doctor_id = d.id;
+
+-- =========================================================
+-- 7. GENERIC updated_at TRIGGER (OPTIONAL)
+-- =========================================================
+
+CREATE OR REPLACE FUNCTION set_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at := NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_users_set_updated_at
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_doctors_set_updated_at
+BEFORE UPDATE ON doctors
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_patients_set_updated_at
+BEFORE UPDATE ON patients
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_medical_notes_set_updated_at
+BEFORE UPDATE ON medical_notes
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+CREATE TRIGGER trg_roles_set_updated_at
+BEFORE UPDATE ON roles
+FOR EACH ROW
+EXECUTE FUNCTION set_updated_at();
+
+-- END OF SCRIPT

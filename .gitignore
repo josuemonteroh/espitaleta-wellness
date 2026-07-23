@@ -11,7 +11,9 @@ Thumbs.db
 
 # Environment
 .env
-.env.*
+.env.local
+.env.development
+.env.production
 
 # Dependencies
 node_modules/
@@ -23,9 +25,6 @@ tmp/
 
 # Composer
 composer.lock
-
-# Package Lock
-package-lock.json
 
 # Build
 dist/

@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to Espitaleta Wellness.
 
-This repository follows professional software engineering practices to ensure code quality, maintainability and scalability.
+This project follows professional software engineering practices to ensure code quality, maintainability, scalability and consistency across all platform components.
 
 ---
 
@@ -11,6 +11,10 @@ This repository follows professional software engineering practices to ensure co
 Every contribution should follow the workflow below:
 
 Planning
+
+↓
+
+Architecture
 
 ↓
 
@@ -40,46 +44,44 @@ Deployment
 
 # Branch Strategy
 
-The repository follows the Git Flow model.
+The repository follows the Git Flow branching model.
 
 ## Main Branches
 
-- main → Production
-- develop → Active Development
+- `main` → Production
+- `develop` → Active Development
 
 ## Feature Branches
 
 Examples:
 
+```
 feature/authentication
-
-feature/patient-dashboard
-
+feature/patient-management
+feature/clinical-dashboard
+feature/backend-api
 feature/google-health-connect
-
 feature/artificial-intelligence
-
 feature/mobile-app
+```
 
 ---
 
 # Commit Convention
 
-Use meaningful commit messages.
+Use clear and meaningful commit messages following conventional commit standards.
 
 Examples:
 
+```
 feat: implement patient dashboard
-
 fix: resolve login validation
-
-docs: update architecture documentation
-
-refactor: improve backend services
-
+docs: update backend documentation
+refactor: improve authentication service
 style: improve responsive layout
-
 test: add authentication tests
+chore: update project dependencies
+```
 
 ---
 
@@ -87,11 +89,14 @@ test: add authentication tests
 
 All contributors should:
 
-- Write clean and maintainable code.
-- Follow project naming conventions.
+- Write clean, readable and maintainable code.
+- Follow the project architecture.
+- Respect the established folder structure.
+- Use descriptive names for files, classes and functions.
 - Document important changes.
 - Avoid unnecessary dependencies.
 - Keep commits focused on a single purpose.
+- Remove unused code before submitting changes.
 
 ---
 
@@ -99,33 +104,54 @@ All contributors should:
 
 Before opening a Pull Request:
 
-- Ensure the project builds successfully.
+- Verify that the project builds successfully.
 - Test the implemented functionality.
-- Update documentation if required.
-- Keep the Pull Request focused on a single feature.
+- Update documentation when necessary.
+- Keep the Pull Request focused on a single feature or fix.
+- Ensure no sensitive information is included.
 
 ---
 
 # Code Reviews
 
-Every Pull Request should be reviewed before being merged into the main branch.
+Every Pull Request should be reviewed before being merged into the `main` branch.
 
 Reviews should verify:
 
 - Code quality
+- Architecture consistency
 - Security
 - Performance
 - Maintainability
 - Documentation
+- Compliance with project standards
 
 ---
 
 # Documentation
 
-Every new module should include appropriate technical documentation when applicable.
+Any significant feature or module should include the appropriate technical documentation.
+
+Project documentation should remain synchronized with implementation changes whenever applicable.
 
 ---
 
-Developed and maintained by
+# Technologies
+
+Current project technologies include:
+
+- HTML5
+- CSS3
+- JavaScript
+- Python (FastAPI - Planned)
+- PostgreSQL
+- Docker
+- Git & GitHub
+
+---
+
+# Maintained By
 
 **SparkByte Technologies**
+
+Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions • Artificial Intelligence

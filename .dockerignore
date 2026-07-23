@@ -1,0 +1,33 @@
+# Git
+.git
+.gitignore
+
+# Environment files
+.env
+.env.*
+
+# Documentation
+README.md
+
+# IDE
+.vscode/
+.idea/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Python cache (para cuando exista el backend)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node modules (por si se usan herramientas de frontend)
+node_modules/
+
+# Docker
+docker-compose.override.yml

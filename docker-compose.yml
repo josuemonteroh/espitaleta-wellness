@@ -1,13 +1,68 @@
-version: '3.8'
-
 services:
 
   frontend:
-    container_name: nyvora_frontend
+    container_name: espitaleta_frontend
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    ports:
+      - "8090:80"
+    restart: unless-stopped
+    networks:
+      - espitaleta_network
 
-  backend:
-    container_name: nyvora_backend
+  postgres:
+    container_name: espitaleta_postgres
+    image: postgres:17-alpine
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - espitaleta_postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - espitaleta_network
 
-  database:
-    container_name: nyvora_database
+  pgadmin:
+    container_name: espitaleta_pgadmin
+    image: dpage/pgadmin4:latest
+    ports:
+      - "5051:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      - espitaleta_pgadmin_data:/var/lib/pgadmin
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - espitaleta_network
 
+volumes:
+
+  espitaleta_postgres_data:
+    name: espitaleta_postgres_data
+
+  espitaleta_pgadmin_data:
+    name: espitaleta_pgadmin_data
+
+networks:
+
+  espitaleta_network:
+    name: espitaleta_network
+    driver: bridge

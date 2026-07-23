@@ -86,7 +86,7 @@ Main components:
 
 Future intelligent services designed to support healthcare professionals.
 
-Planned capabilities:
+Planned capabilities include:
 
 - Clinical Recommendations
 - Predictive Analytics
@@ -108,6 +108,8 @@ Current architecture includes:
 - Business Logic
 - Clinical Services
 - DTOs / View Models
+
+The backend will be developed using **Python** and **FastAPI**, providing a scalable REST API integrated with PostgreSQL and prepared for future enterprise healthcare services.
 
 ---
 
@@ -131,9 +133,9 @@ Current modules include:
 | Layer | Technology |
 |---------|------------|
 | Frontend | HTML5, CSS3, JavaScript |
-| Backend | PHP |
-| Database | PostgreSQL *(Target Platform)* |
-| Current Database | MySQL *(Prototype)* |
+| Backend | Python (FastAPI) *(Planned)* |
+| Database | PostgreSQL |
+| Prototype Database | MySQL *(Current Prototype)* |
 | Infrastructure | Docker |
 | Artificial Intelligence | Planned |
 | Health Integration | Google Health Connect *(Planned)* |
@@ -176,20 +178,64 @@ The following features are part of the product roadmap and are not included in t
 ```text
 espitaleta-wellness
 │
-├── .github
-├── ai
-├── backend
-├── contracts
-├── database
-├── docker
-├── docs
-├── etl
-├── frontend
-├── mobile
-├── screenshots
-├── scripts
+├── ai/
+├── backend/
+├── database/
+├── docker/
+├── docs/
+├── etl/
+├── frontend/
+├── mobile/
+├── screenshots/
+│
+├── .dockerignore
+├── .env.example
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
 ├── docker-compose.yml
+├── LICENSE
 └── README.md
+```
+
+---
+
+# Quick Start
+
+Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+Navigate to the project directory:
+
+```bash
+cd espitaleta-wellness
+```
+
+Create your local environment file:
+
+```bash
+cp .env.example .env
+```
+
+Configure the required environment variables.
+
+Start the Docker environment:
+
+```bash
+docker compose up -d
+```
+
+Access the application:
+
+```text
+Frontend:
+http://localhost:8090
+
+pgAdmin:
+http://localhost:5051
 ```
 
 ---
@@ -226,43 +272,35 @@ Continuous Improvement
 
 # Roadmap
 
-## Phase 1
-
-Enterprise Prototype
+## Phase 1 — Enterprise Prototype
 
 - Authentication
 - Patient Management
 - Clinical Dashboard
 - Nutrition Management
-- Documentation
+- Technical Documentation
 
 ---
 
-## Phase 2
+## Phase 2 — Platform Expansion
 
-Platform Expansion
-
-- Backend API
-- PostgreSQL Migration
+- Python FastAPI Backend
+- PostgreSQL Integration
 - Docker Improvements
 - Security Enhancements
 
 ---
 
-## Phase 3
-
-Healthcare Integrations
+## Phase 3 — Healthcare Integrations
 
 - Google Health Connect
-- Wearables
+- Wearable Devices
 - ETL Services
 - Mobile Synchronization
 
 ---
 
-## Phase 4
-
-Artificial Intelligence
+## Phase 4 — Artificial Intelligence
 
 - AI Agents
 - Clinical Recommendations
@@ -271,9 +309,7 @@ Artificial Intelligence
 
 ---
 
-## Phase 5
-
-Enterprise Ecosystem
+## Phase 5 — Enterprise Ecosystem
 
 - Mobile Applications
 - Multi-Clinic Support
@@ -284,18 +320,49 @@ Enterprise Ecosystem
 
 # Documentation
 
-Technical documentation is available inside the **docs** directory.
+Technical documentation is available inside the **docs/** directory.
 
 Documentation includes:
 
 - Software Architecture
 - API Documentation
 - Technical Contracts
-- UML Diagrams
 - Database Documentation
+- UML Diagrams
 - Planning
+- Research
 - Mockups
-- Technical Research
+- Meeting Notes
+
+---
+
+# Current Project Status
+
+The project is currently in the **Enterprise Prototype** stage.
+
+## Completed
+
+- Enterprise repository structure
+- Frontend prototype
+- Docker infrastructure
+- PostgreSQL environment
+- Technical documentation
+- Backend architecture planning
+- Database architecture planning
+
+## In Progress
+
+- FastAPI backend implementation
+- PostgreSQL integration
+- REST API development
+
+## Planned
+
+- Artificial Intelligence
+- ETL Services
+- Google Health Connect Integration
+- Wearable Device Synchronization
+- Mobile Applications
 
 ---
 
@@ -305,9 +372,9 @@ Documentation includes:
 
 Espitaleta Wellness
 
-## Software Engineering
+## Developed by
 
-SparkByte Technologies
+**SparkByte Technologies**
 
 Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions • Artificial Intelligence
 
@@ -315,28 +382,24 @@ Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions 
 
 # Project Status
 
-**Current Stage**
-
-Enterprise Prototype
-
-**Development Methodology**
-
-Agile
-
-**Architecture**
-
-Enterprise Modular Architecture
-
-**Status**
-
-Active Development
+| Item | Status |
+|------|--------|
+| Development Stage | Enterprise Prototype |
+| Methodology | Agile |
+| Architecture | Enterprise Modular Architecture |
+| Infrastructure | Docker |
+| Frontend | Prototype Completed |
+| Backend | Planned |
+| Database | PostgreSQL Architecture Prepared |
+| Artificial Intelligence | Planned |
+| Mobile | Planned |
 
 ---
 
 # License
 
-Copyright © 2026 Espitaleta Wellness.
+Copyright © 2026 SparkByte Technologies.
 
-Developed and maintained by **SparkByte Technologies**.
+Espitaleta Wellness is proprietary software developed and maintained exclusively by **SparkByte Technologies**.
 
 All Rights Reserved.
