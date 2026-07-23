@@ -57,7 +57,7 @@ Espitaleta Wellness follows a modular enterprise architecture composed of five s
 
 Responsible for collecting patient information from future external integrations.
 
-**Planned integrations:**
+**Planned integrations**
 
 - Google Health Connect
 - Wearable Devices
@@ -70,7 +70,7 @@ Responsible for collecting patient information from future external integrations
 
 Responsible for storing and organizing clinical information.
 
-**Main components:**
+**Main components**
 
 - PostgreSQL
 - Patient Records
@@ -86,7 +86,7 @@ Responsible for storing and organizing clinical information.
 
 Future intelligent services designed to support healthcare professionals.
 
-**Planned capabilities:**
+**Planned capabilities**
 
 - Clinical Recommendations
 - Predictive Analytics
@@ -100,7 +100,7 @@ Future intelligent services designed to support healthcare professionals.
 
 Business logic responsible for exposing platform functionality.
 
-**Current architecture:**
+**Current architecture**
 
 - REST API
 - Authentication
@@ -117,7 +117,7 @@ The backend will be developed using **Python** and **FastAPI**, providing a scal
 
 Modern interfaces for healthcare professionals and patients.
 
-**Current modules:**
+**Current modules**
 
 - Authentication
 - Clinical Dashboard
@@ -131,7 +131,7 @@ Modern interfaces for healthcare professionals and patients.
 # Technology Stack
 
 | Layer | Technology |
-|---------|------------|
+|--------|------------|
 | Frontend | HTML5, CSS3, JavaScript |
 | Backend | Python (FastAPI) *(Planned)* |
 | Database | PostgreSQL |
@@ -201,40 +201,49 @@ espitaleta-wellness
 
 # Quick Start
 
-Clone the repository:
+## Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/<organization>/espitaleta-wellness.git
 ```
 
-Navigate to the project directory:
+## Navigate to the project directory
 
 ```bash
 cd espitaleta-wellness
 ```
 
-Create your local environment file:
+## Create the environment file
 
 ```bash
 cp .env.example .env
 ```
 
-Configure the required environment variables.
+Configure the required environment variables inside the `.env` file.
 
-Start the Docker environment:
+## Build and start the Docker environment
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
-Access the application:
+## Verify running containers
 
-```text
-Frontend
-http://localhost:8090
+```bash
+docker compose ps
+```
 
-pgAdmin
-http://localhost:5051
+## Access the platform
+
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:8090 |
+| pgAdmin | http://localhost:5051 |
+
+## Stop the environment
+
+```bash
+docker compose down
 ```
 
 ---
@@ -333,6 +342,19 @@ Documentation includes:
 - Mockups
 - Meeting Notes
 
+Additional documentation is available in:
+
+- `backend/`
+- `database/`
+- `docker/`
+- `frontend/`
+- `ai/`
+- `etl/`
+- `mobile/`
+- `screenshots/`
+
+Each module contains its own README with implementation details and project organization.
+
 ---
 
 # Current Project Status
@@ -345,6 +367,7 @@ The project is currently in the **Enterprise Prototype** stage.
 - Frontend prototype
 - Docker infrastructure
 - Technical documentation
+- Enterprise architecture
 - Backend architecture planning
 - Database architecture planning
 
@@ -364,45 +387,10 @@ The project is currently in the **Enterprise Prototype** stage.
 
 ---
 
-# Engineering
-
-## Product
-
-**Espitaleta Wellness**
-
-## Developed by
-
-**SparkByte Technologies**
-
-Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions • Artificial Intelligence
-
----
-
-# Project Status
-
-| Item | Status |
-|------|--------|
-| Development Stage | Enterprise Prototype |
-| Methodology | Agile |
-| Architecture | Enterprise Modular Architecture |
-| Infrastructure | Docker |
-| Frontend | Prototype Completed |
-| Backend | Planned |
-| Database | PostgreSQL Architecture Prepared |
-| Artificial Intelligence | Planned |
-| Mobile | Planned |
-
----
-
 # License
 
 Copyright © 2026 SparkByte Technologies.
 
 Espitaleta Wellness is proprietary software developed and maintained exclusively by **SparkByte Technologies**.
 
-All Rights Reserved.
-Copyright © 2026 SparkByte Technologies.
-
-Espitaleta Wellness is proprietary software developed and maintained exclusively by **SparkByte Technologies**.
-
-All Rights Reserved.
+**All Rights Reserved.**
