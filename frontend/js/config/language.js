@@ -2,317 +2,289 @@
    LANGUAGE SYSTEM
 */
 
+"use strict";
+
+const ESPITALETA_LANGUAGE = "espitaleta_language";
 
 const translations = {
 
-
     en: {
-
 
         /* LOGIN */
 
         brand_badge:
-        "Connected Healthcare Platform",
-
+            "Connected Healthcare Platform",
 
         feature_records_title:
-        "Clinical Records",
+            "Clinical Records",
 
         feature_records_description:
-        "Access complete patient records, medical history and nutritional assessments from a centralized platform.",
-
+            "Access complete patient records, medical history and nutritional assessments from a centralized platform.",
 
         feature_monitoring_title:
-        "Health Monitoring",
+            "Health Monitoring",
 
         feature_monitoring_description:
-        "Monitor biometric indicators, nutritional progress and patient evolution in real time.",
-
+            "Monitor biometric indicators, nutritional progress and patient evolution in real time.",
 
         feature_analytics_title:
-        "Clinical Intelligence",
+            "Clinical Intelligence",
 
         feature_analytics_description:
-        "Transform clinical information into actionable insights that support healthcare decision-making.",
-
+            "Transform clinical information into actionable insights that support healthcare decision-making.",
 
         feature_security_title:
-        "Enterprise Security",
+            "Enterprise Security",
 
         feature_security_description:
-        "Protect sensitive healthcare information with secure authentication and role-based access.",
-
+            "Protect sensitive healthcare information with secure authentication and role-based access.",
 
         brand_footer:
-        "Designed and developed by SparkByte Technologies.",
-
-
+            "Designed and developed by SparkByte Technologies.",
 
         login_title:
-        "Welcome Back",
-
+            "Welcome Back",
 
         login_subtitle:
-        "Sign in to access your Espitaleta Wellness workspace.",
-
+            "Sign in to access your Espitaleta Wellness workspace.",
 
         email_label:
-        "Email Address",
-
+            "Email Address",
 
         password_label:
-        "Password",
-
+            "Password",
 
         email_placeholder:
-        "Enter your email",
-
+            "Enter your email",
 
         password_placeholder:
-        "Enter your password",
-
+            "Enter your password",
 
         remember_me:
-        "Keep me signed in",
-
+            "Keep me signed in",
 
         forgot_password:
-        "Forgot password?",
-
+            "Forgot password?",
 
         login_button:
-        "Sign In",
-
+            "Sign In",
 
         divider:
-        "Enterprise Access",
-
+            "Enterprise Access",
 
         enterprise_login:
-        "Sign in with Organization",
-
+            "Sign in with Organization",
 
         request_access_text:
-        "Don't have an account?",
-
+            "Don't have an account?",
 
         request_access:
-        "Request Access"
+            "Request Access",
 
+        required_fields:
+            "Please complete all required fields.",
+
+        invalid_email:
+            "Please enter a valid email address.",
+
+        invalid_credentials:
+            "Invalid email or password.",
+
+        show_password:
+            "Show password",
+
+        hide_password:
+            "Hide password"
 
     },
 
-
-
     es: {
-
 
         /* LOGIN */
 
-
         brand_badge:
-        "Plataforma de Salud Conectada",
-
-
+            "Plataforma de Salud Conectada",
 
         feature_records_title:
-        "Registros Clínicos",
-
+            "Registros Clínicos",
 
         feature_records_description:
-        "Administre expedientes médicos, historial clínico y evaluaciones nutricionales desde una plataforma centralizada.",
-
-
+            "Administre expedientes médicos, historial clínico y evaluaciones nutricionales desde una plataforma centralizada.",
 
         feature_monitoring_title:
-        "Monitoreo de Salud",
-
+            "Monitoreo de Salud",
 
         feature_monitoring_description:
-        "Supervise indicadores biométricos, progreso nutricional y evolución del paciente.",
-
-
+            "Supervise indicadores biométricos, progreso nutricional y evolución del paciente.",
 
         feature_analytics_title:
-        "Inteligencia Clínica",
-
+            "Inteligencia Clínica",
 
         feature_analytics_description:
-        "Convierta información clínica en datos útiles para apoyar decisiones médicas.",
-
-
+            "Convierta información clínica en datos útiles para apoyar decisiones médicas.",
 
         feature_security_title:
-        "Seguridad Empresarial",
-
+            "Seguridad Empresarial",
 
         feature_security_description:
-        "Proteja información sensible mediante autenticación segura y control de accesos.",
-
-
+            "Proteja información sensible mediante autenticación segura y control de accesos.",
 
         brand_footer:
-        "Diseñado y desarrollado por SparkByte Technologies.",
-
-
+            "Diseñado y desarrollado por SparkByte Technologies.",
 
         login_title:
-        "Bienvenido",
-
-
+            "Bienvenido",
 
         login_subtitle:
-        "Ingrese para acceder al espacio de trabajo de Espitaleta Wellness.",
-
-
+            "Ingrese para acceder al espacio de trabajo de Espitaleta Wellness.",
 
         email_label:
-        "Correo electrónico",
-
-
+            "Correo electrónico",
 
         password_label:
-        "Contraseña",
-
-
+            "Contraseña",
 
         email_placeholder:
-        "Ingrese su correo electrónico",
-
-
+            "Ingrese su correo electrónico",
 
         password_placeholder:
-        "Ingrese su contraseña",
-
-
+            "Ingrese su contraseña",
 
         remember_me:
-        "Mantener sesión iniciada",
-
-
+            "Mantener sesión iniciada",
 
         forgot_password:
-        "¿Olvidó su contraseña?",
-
-
+            "¿Olvidó su contraseña?",
 
         login_button:
-        "Ingresar",
-
-
+            "Ingresar",
 
         divider:
-        "Acceso Empresarial",
-
-
+            "Acceso Empresarial",
 
         enterprise_login:
-        "Ingresar con Organización",
-
-
+            "Ingresar con Organización",
 
         request_access_text:
-        "¿No tiene una cuenta?",
-
-
+            "¿No tiene una cuenta?",
 
         request_access:
-        "Solicitar acceso"
+            "Solicitar acceso",
 
+        required_fields:
+            "Complete todos los campos obligatorios.",
+
+        invalid_email:
+            "Ingrese un correo electrónico válido.",
+
+        invalid_credentials:
+            "El correo electrónico o la contraseña son incorrectos.",
+
+        show_password:
+            "Mostrar contraseña",
+
+        hide_password:
+            "Ocultar contraseña"
 
     }
-
 
 };
 
-
 let currentLanguage = "en";
 
+/* GET TRANSLATION */
 
+function getTranslation(key) {
 
-function changeLanguage(language){
-
-
-    if(!translations[language]){
-
-        return;
-
-    }
-
-
-    currentLanguage = language;
-
-
-
-    document.querySelectorAll("[data-lang]")
-    .forEach(element=>{
-
-
-        const key =
-        element.dataset.lang;
-
-
-
-        if(translations[language][key]){
-
-
-            element.textContent =
-            translations[language][key];
-
-
-        }
-
-
-    });
-
-
-    document.querySelectorAll("[data-placeholder]")
-    .forEach(element=>{
-
-
-        const key =
-        element.dataset.placeholder;
-
-
-
-        if(translations[language][key]){
-
-
-            element.placeholder =
-            translations[language][key];
-
-
-        }
-
-
-    });
-
-
-    localStorage.setItem(
-        "espitaleta_language",
-        language
+    return (
+        translations[currentLanguage]?.[key] ||
+        translations.en[key] ||
+        key
     );
-
 
 }
 
+/* CHANGE LANGUAGE */
 
-document.addEventListener(
-"DOMContentLoaded",
-()=>{
+function changeLanguage(language) {
 
+    const selectedLanguage =
+        translations[language] ? language : "en";
 
-    const savedLanguage =
-    localStorage.getItem(
-        "espitaleta_language"
-    );
+    currentLanguage = selectedLanguage;
 
+    document.documentElement.lang =
+        selectedLanguage;
 
-    if(savedLanguage){
+    document
+        .querySelectorAll("[data-lang]")
+        .forEach((element) => {
 
-        changeLanguage(savedLanguage);
+            const key =
+                element.dataset.lang;
+
+            const translatedText =
+                translations[selectedLanguage][key];
+
+            if (translatedText) {
+
+                element.textContent =
+                    translatedText;
+
+            }
+
+        });
+
+    document
+        .querySelectorAll("[data-placeholder]")
+        .forEach((element) => {
+
+            const key =
+                element.dataset.placeholder;
+
+            const translatedText =
+                translations[selectedLanguage][key];
+
+            if (translatedText) {
+
+                element.placeholder =
+                    translatedText;
+
+            }
+
+        });
+
+    const currentLanguageElement =
+        document.getElementById("current-language");
+
+    if (currentLanguageElement) {
+
+        currentLanguageElement.textContent =
+            selectedLanguage.toUpperCase();
 
     }
 
+    localStorage.setItem(
+        ESPITALETA_LANGUAGE,
+        selectedLanguage
+    );
 
-});
+}
+
+/* INITIALIZE LANGUAGE */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const savedLanguage =
+            localStorage.getItem(
+                ESPITALETA_LANGUAGE
+            );
+
+        changeLanguage(
+            savedLanguage || "en"
+        );
+
+    }
+);

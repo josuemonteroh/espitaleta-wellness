@@ -1,117 +1,174 @@
 /* ESPITALETA WELLNESS
-   AUTHENTICATION LAYOUT */
+   AUTHENTICATION LAYOUT
+*/
 
 /* AUTH LAYOUT */
 
-.auth-layout{
+.auth-layout {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:55% 45%;
+    grid-template-columns: 55% 45%;
 
-    width:100%;
+    width: 100%;
 
-    height:100vh;
+    min-height: 100vh;
 
-    overflow:hidden;
+    overflow: hidden;
 
-    background:var(--background);
+    background: var(--background);
 
 }
 
 /* BRAND PANEL */
 
-.auth-brand{
+.auth-brand {
 
-    position:relative;
+    position: relative;
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:flex-start;
+    align-items: flex-start;
 
-    padding:3rem 4rem;
+    min-width: 0;
 
-    overflow:hidden;
+    padding: 3rem 4rem;
+
+    overflow: hidden;
 
 }
 
 /* LOGIN PANEL */
 
-.auth-login{
+.auth-login {
 
-    display:flex;
+    position: relative;
 
-    justify-content:center;
+    display: flex;
 
-    align-items:center;
+    justify-content: center;
 
-    padding:2.5rem;
+    align-items: center;
 
-    background:var(--surface);
+    min-width: 0;
+
+    padding: 2.5rem;
+
+    background: var(--surface);
 
 }
 
 /* LOGIN CONTAINER */
 
-.login-container{
+.login-container {
 
-    width:100%;
+    width: 100%;
 
-    max-width:700px;
-
-}
-
-/* LANGUAGE SELECTOR */
-
-.language-selector{
-
-    position:absolute;
-
-    top:1.25rem;
-
-    right:1.5rem;
-
-    z-index:10;
-
-    font-size:.85rem;
+    max-width: 700px;
 
 }
 
-/* RESPONSIVE */
+/* LARGE DESKTOP */
 
-@media(max-width:1024px){
+@media (max-width: 1440px) {
 
-    .auth-layout{
+    .auth-layout {
 
-        grid-template-columns:1fr;
+        grid-template-columns: 52% 48%;
 
     }
 
-    .auth-brand{
+    .auth-brand {
 
-        display:none;
+        padding: 2.5rem 3rem;
 
     }
 
 }
 
-@media(max-width:768px){
+/* LAPTOP */
 
-    .auth-login{
+@media (max-width: 1200px) {
 
-        padding:1.5rem;
+    .auth-layout {
+
+        grid-template-columns: 50% 50%;
+
+    }
+
+    .auth-brand {
+
+        padding: 2rem 2.5rem;
+
+    }
+
+    .auth-login {
+
+        padding: 2rem;
 
     }
 
 }
 
-@media(max-width:480px){
+/* TABLET */
 
-    .auth-login{
+@media (max-width: 992px) {
 
-        padding:1rem;
+    .auth-layout {
+
+        grid-template-columns: 1fr;
+
+        min-height: 100vh;
+
+        overflow: visible;
+
+    }
+
+    .auth-brand {
+
+        display: none;
+
+    }
+
+    .auth-login {
+
+        min-height: 100vh;
+
+        padding: 2rem;
+
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .auth-login {
+
+        padding: 1.5rem;
+
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+    .auth-login {
+
+        align-items: flex-start;
+
+        padding: 1rem;
+
+    }
+
+    .login-container {
+
+        max-width: 100%;
 
     }
 

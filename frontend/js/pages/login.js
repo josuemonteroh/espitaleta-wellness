@@ -2,7 +2,6 @@
    LOGIN PAGE
 */
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -28,12 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
     /*
         PASSWORD VISIBILITY
     */
+
     const passwordInput =
         document.getElementById("password");
 
 
     const togglePassword =
         document.getElementById("toggle-password");
+
 
     if(togglePassword && passwordInput){
 
@@ -47,17 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 visible ? "password" : "text";
 
 
-
             togglePassword.innerHTML =
                 visible
                 ? '<i data-lucide="eye"></i>'
                 : '<i data-lucide="eye-off"></i>';
+
+
+            togglePassword.setAttribute(
+                "aria-label",
+                visible
+                    ? getTranslation("show_password")
+                    : getTranslation("hide_password")
+            );
+
 
             lucide.createIcons();
 
         });
 
     }
+
 
     /*
         LANGUAGE MENU
@@ -75,16 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
         languageButton.addEventListener("click",(event)=>{
 
-
             event.stopPropagation();
-
 
             languageMenu.classList.toggle("active");
 
         });
 
-        document.addEventListener("click",(event)=>{
 
+        document.addEventListener("click",(event)=>{
 
             if(
                 !languageButton.contains(event.target) &&
@@ -99,76 +107,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+
     /*
         LANGUAGE CHANGE
     */
-
 
     const languageOptions =
         document.querySelectorAll("[data-language]");
 
 
-
     languageOptions.forEach(option=>{
 
-
         option.addEventListener("click",()=>{
-
 
             const selectedLanguage =
                 option.dataset.language;
 
 
-
             if(typeof changeLanguage === "function"){
-
 
                 changeLanguage(selectedLanguage);
 
-
             }
 
 
+            if(languageMenu){
 
-            const currentLanguage =
-                document.getElementById("current-language");
-
-
-
-            if(currentLanguage){
-
-
-                currentLanguage.textContent =
-                    selectedLanguage.toUpperCase();
-
+                languageMenu.classList.remove("active");
 
             }
-
-
-
-            languageMenu.classList.remove("active");
-
 
         });
 
-
-
     });
-
-
-
 
 
     /*
         LOGIN VALIDATION
     */
 
-
     const loginForm =
         document.getElementById("login-form");
 
 
-    if(loginForm){
+    const emailInput =
+        document.getElementById("email");
+
+
+    if(loginForm && emailInput && passwordInput){
 
         loginForm.addEventListener("submit",(event)=>{
 
@@ -176,18 +162,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             const email =
-                document.getElementById("email")
-                .value
-                .trim();
-
+                emailInput.value.trim();
 
 
             const password =
-                document.getElementById("password")
-                .value
-                .trim();
+                passwordInput.value;
 
 
+            if(!email || !password){
+
+                alert(
+                    getTranslation("required_fields")
+                );
+
+                return;
+
+            }
+
+
+            if(!emailInput.validity.valid){
+
+                alert(
+                    getTranslation("invalid_email")
+                );
+
+                emailInput.focus();
+
+                return;
+
+            }
 
 
             if(
@@ -195,32 +198,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 password === DEMO_USER.password
             ){
 
-
-
                 createSession(email);
 
                 window.location.href =
-                "pages/dashboard.html";
+                    "pages/dashboard.html";
 
             }
             else{
 
-
                 alert(
-                    "Invalid email or password"
+                    getTranslation("invalid_credentials")
                 );
-
 
             }
 
-
-
         });
 
-
-
     }
-
-
 
 });

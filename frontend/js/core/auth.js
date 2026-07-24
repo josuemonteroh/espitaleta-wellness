@@ -6,6 +6,24 @@
 const ESPITALETA_SESSION = "espitaleta_session";
 
 
+/*
+    LOGIN PATH
+*/
+
+function getLoginPath(){
+
+
+    const isInsidePages =
+        window.location.pathname.includes("/pages/");
+
+
+    return isInsidePages
+        ? "../login.html"
+        : "login.html";
+
+
+}
+
 
 /*
     CREATE SESSION
@@ -39,7 +57,6 @@ function createSession(user){
 }
 
 
-
 /*
     GET SESSION
 */
@@ -53,7 +70,6 @@ function getSession(){
         );
 
 
-
     if(!session){
 
         return null;
@@ -61,12 +77,23 @@ function getSession(){
     }
 
 
+    try{
 
-    return JSON.parse(session);
+        return JSON.parse(session);
+
+    }
+    catch(error){
+
+        localStorage.removeItem(
+            ESPITALETA_SESSION
+        );
+
+        return null;
+
+    }
 
 
 }
-
 
 
 /*
@@ -80,13 +107,11 @@ function isAuthenticated(){
         getSession();
 
 
-
     return session &&
            session.authenticated === true;
 
 
 }
-
 
 
 /*
@@ -100,14 +125,13 @@ function requireAuth(){
 
 
         window.location.href =
-            "login.html";
+            getLoginPath();
 
 
     }
 
 
 }
-
 
 
 /*
@@ -123,7 +147,7 @@ function logout(){
 
 
     window.location.href =
-        "login.html";
+        getLoginPath();
 
 
 }
