@@ -1,6 +1,6 @@
 # ESPITALETA WELLNESS
 
-# Intelligent Healthcare Platform
+## Intelligent Healthcare Platform
 
 Next-generation digital healthcare ecosystem designed to connect patients, healthcare professionals and intelligent technologies into a unified platform for preventive healthcare, clinical decision support and personalized wellness.
 
@@ -57,7 +57,7 @@ Espitaleta Wellness follows a modular enterprise architecture composed of five s
 
 Responsible for collecting patient information from future external integrations.
 
-Planned integrations include:
+**Planned integrations**
 
 - Google Health Connect
 - Wearable Devices
@@ -70,7 +70,7 @@ Planned integrations include:
 
 Responsible for storing and organizing clinical information.
 
-Main components:
+**Main components**
 
 - PostgreSQL
 - Patient Records
@@ -86,7 +86,7 @@ Main components:
 
 Future intelligent services designed to support healthcare professionals.
 
-Planned capabilities include:
+**Planned capabilities**
 
 - Clinical Recommendations
 - Predictive Analytics
@@ -100,7 +100,7 @@ Planned capabilities include:
 
 Business logic responsible for exposing platform functionality.
 
-Current architecture includes:
+**Current architecture**
 
 - REST API
 - Authentication
@@ -117,7 +117,7 @@ The backend will be developed using **Python** and **FastAPI**, providing a scal
 
 Modern interfaces for healthcare professionals and patients.
 
-Current modules include:
+**Current modules**
 
 - Authentication
 - Clinical Dashboard
@@ -131,11 +131,10 @@ Current modules include:
 # Technology Stack
 
 | Layer | Technology |
-|---------|------------|
+|--------|------------|
 | Frontend | HTML5, CSS3, JavaScript |
 | Backend | Python (FastAPI) *(Planned)* |
 | Database | PostgreSQL |
-| Prototype Database | MySQL *(Current Prototype)* |
 | Infrastructure | Docker |
 | Artificial Intelligence | Planned |
 | Health Integration | Google Health Connect *(Planned)* |
@@ -202,40 +201,49 @@ espitaleta-wellness
 
 # Quick Start
 
-Clone the repository:
+## Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/<organization>/espitaleta-wellness.git
 ```
 
-Navigate to the project directory:
+## Navigate to the project directory
 
 ```bash
 cd espitaleta-wellness
 ```
 
-Create your local environment file:
+## Create the environment file
 
 ```bash
 cp .env.example .env
 ```
 
-Configure the required environment variables.
+Configure the required environment variables inside the `.env` file.
 
-Start the Docker environment:
+## Build and start the Docker environment
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
-Access the application:
+## Verify running containers
 
-```text
-Frontend:
-http://localhost:8090
+```bash
+docker compose ps
+```
 
-pgAdmin:
-http://localhost:5051
+## Access the platform
+
+| Service | URL |
+|---------|-----|
+| Frontend | http://localhost:8090 |
+| pgAdmin | http://localhost:5051 |
+
+## Stop the environment
+
+```bash
+docker compose down
 ```
 
 ---
@@ -334,6 +342,19 @@ Documentation includes:
 - Mockups
 - Meeting Notes
 
+Additional documentation is available in:
+
+- `backend/`
+- `database/`
+- `docker/`
+- `frontend/`
+- `ai/`
+- `etl/`
+- `mobile/`
+- `screenshots/`
+
+Each module contains its own README with implementation details and project organization.
+
 ---
 
 # Current Project Status
@@ -345,8 +366,8 @@ The project is currently in the **Enterprise Prototype** stage.
 - Enterprise repository structure
 - Frontend prototype
 - Docker infrastructure
-- PostgreSQL environment
 - Technical documentation
+- Enterprise architecture
 - Backend architecture planning
 - Database architecture planning
 
@@ -366,40 +387,10 @@ The project is currently in the **Enterprise Prototype** stage.
 
 ---
 
-# Engineering
-
-## Product
-
-Espitaleta Wellness
-
-## Developed by
-
-**SparkByte Technologies**
-
-Enterprise Software Engineering • Healthcare Technologies • Cloud Solutions • Artificial Intelligence
-
----
-
-# Project Status
-
-| Item | Status |
-|------|--------|
-| Development Stage | Enterprise Prototype |
-| Methodology | Agile |
-| Architecture | Enterprise Modular Architecture |
-| Infrastructure | Docker |
-| Frontend | Prototype Completed |
-| Backend | Planned |
-| Database | PostgreSQL Architecture Prepared |
-| Artificial Intelligence | Planned |
-| Mobile | Planned |
-
----
-
 # License
 
 Copyright © 2026 SparkByte Technologies.
 
 Espitaleta Wellness is proprietary software developed and maintained exclusively by **SparkByte Technologies**.
 
-All Rights Reserved.
+**All Rights Reserved.**
