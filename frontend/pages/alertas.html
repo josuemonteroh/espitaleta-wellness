@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        Alertas Clínicas | Espitaleta Wellness
+    </title>
+
+
+
+    <!-- BASE -->
+
+    <link rel="stylesheet" href="../css/base/variables.css">
+
+    <link rel="stylesheet" href="../css/base/reset.css">
+
+    <link rel="stylesheet" href="../css/base/typography.css">
+
+    <link rel="stylesheet" href="../css/base/global.css">
+
+
+
+
+    <!-- COMPONENTS -->
+
+    <link rel="stylesheet" href="../css/components/button.css">
+
+    <link rel="stylesheet" href="../css/components/card.css">
+
+    <link rel="stylesheet" href="../css/components/table.css">
+
+
+    <!-- LAYOUT -->
+
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+
+
+    <!-- PAGE -->
+
+    <link rel="stylesheet" href="../css/pages/alerts.css">
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+
+<div class="dashboard-layout">
+
+
+
+
+
+<!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+
+<aside class="sidebar">
+
+
+
+
+
+    <div class="sidebar-brand">
+
+
+        <div class="brand-mark">
+
+
+            <i data-lucide="heart-pulse"></i>
+
+
+        </div>
+
+
+
+
+        <div class="brand-text">
+
+
+            <strong>
+                Espitaleta
+            </strong>
+
+
+            <span>
+                Wellness
+            </span>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <nav class="sidebar-navigation">
+
+
+
+
+
+        <span class="nav-label">
+            General
+        </span>
+
+
+
+
+
+        <a href="dashboard.html">
+
+
+            <i data-lucide="layout-dashboard"></i>
+
+
+            <span>
+                Dashboard
+            </span>
+
+
+        </a>
+
+
+
+
+
+        <a href="pacientes.html">
+
+
+            <i data-lucide="users"></i>
+
+
+            <span>
+                Pacientes
+            </span>
+
+
+        </a>
+
+
+
+
+
+        <a href="metricas.html">
+
+
+            <i data-lucide="activity"></i>
+
+
+            <span>
+                Métricas
+            </span>
+
+
+        </a>
+
+
+
+
+
+
+
+
+        <span class="nav-label">
+            Clínico
+        </span>
+
+
+
+
+
+
+
+        <a href="historial.html">
+
+
+            <i data-lucide="clipboard-list"></i>
+
+
+            <span>
+                Historial clínico
+            </span>
+
+
+        </a>
+
+
+
+
+
+
+
+        <a href="alertas.html" class="active">
+
+
+            <i data-lucide="triangle-alert"></i>
+
+
+            <span>
+                Alertas
+            </span>
+
+
+
+            <span class="nav-badge">
+                12
+            </span>
+
+
+        </a>
+
+
+
+
+
+
+
+        <a href="reportes.html">
+
+
+            <i data-lucide="file-text"></i>
+
+
+            <span>
+                Reportes
+            </span>
+
+
+        </a>
+
+
+
+
+
+
+    </nav>
+
+
+
+
+
+
+
+
+    <div class="sidebar-footer">
+
+
+        <a href="../login.html">
+
+
+            <i data-lucide="log-out"></i>
+
+
+            <span>
+                Cerrar sesión
+            </span>
+
+
+        </a>
+
+
+    </div>
+
+
+
+
+
+</aside>
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+
+<header class="top-header">
+
+
+
+    <div>
+
+
+        <h1>
+            Alertas clínicas
+        </h1>
+
+
+        <p>
+            Gestión y seguimiento de alertas médicas de pacientes
+        </p>
+
+
+    </div>
+
+
+
+
+
+    <div class="header-actions">
+
+
+
+        <span>
+            ES
+        </span>
+
+
+
+        <i data-lucide="bell"></i>
+
+
+
+
+
+        <div class="user-profile">
+
+
+            <i data-lucide="user"></i>
+
+
+
+            <div>
+
+
+                <strong>
+                    Dr. Espitaleta
+                </strong>
+
+
+                <small>
+                    Espitaleta Wellness
+                </small>
+
+
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+</header>
+
+
+
+
+
+
+
+<!-- =====================================================
+     ALERT SUMMARY
+====================================================== -->
+
+
+<section class="alert-summary">
+
+
+
+
+
+
+    <article class="alert-card">
+
+
+
+        <div class="alert-icon">
+
+
+            <i data-lucide="triangle-alert"></i>
+
+
+        </div>
+
+
+
+
+        <div>
+
+
+            <span>
+                Alertas activas
+            </span>
+
+
+            <strong>
+                12
+            </strong>
+
+
+            <p>
+                Requieren atención
+            </p>
+
+
+
+        </div>
+
+
+
+    </article>
+
+
+
+
+
+
+
+    <article class="alert-card">
+
+
+
+        <div class="alert-icon danger">
+
+
+            <i data-lucide="octagon-alert"></i>
+
+
+        </div>
+
+
+
+
+        <div>
+
+
+            <span>
+                Alta prioridad
+            </span>
+
+
+            <strong>
+                4
+            </strong>
+
+
+            <p>
+                Casos críticos
+            </p>
+
+
+
+        </div>
+
+
+
+    </article>
+
+
+
+
+
+
+
+    <article class="alert-card">
+
+
+
+        <div class="alert-icon warning">
+
+
+            <i data-lucide="clock"></i>
+
+
+        </div>
+
+
+
+
+        <div>
+
+
+            <span>
+                Pendientes
+            </span>
+
+
+            <strong>
+                8
+            </strong>
+
+
+            <p>
+                Sin resolver
+            </p>
+
+
+
+        </div>
+
+
+
+    </article>
+
+
+
+
+
+
+
+    <article class="alert-card">
+
+
+
+        <div class="alert-icon success">
+
+
+            <i data-lucide="check-circle"></i>
+
+
+        </div>
+
+
+
+
+        <div>
+
+
+            <span>
+                Resueltas
+            </span>
+
+
+            <strong>
+                35
+            </strong>
+
+
+            <p>
+                Este mes
+            </p>
+
+
+
+        </div>
+
+
+
+    </article>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     ALERT LIST CONTAINER
+====================================================== -->
+
+
+<section class="alerts-container">
+
+
+
+
+
+<div class="section-header">
+
+
+
+    <div>
+
+
+        <h2>
+            Lista de alertas
+        </h2>
+
+
+        <p>
+            Seguimiento de alertas clínicas registradas
+        </p>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ACTIONS -->
+
+
+<div class="alerts-actions">
+
+
+
+
+
+    <div class="search-box">
+
+
+        <i data-lucide="search"></i>
+
+
+
+        <input
+            type="text"
+            placeholder="Buscar alerta o paciente..."
+        >
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <button class="btn btn-outline">
+
+
+
+        <i data-lucide="filter"></i>
+
+
+        Filtros
+
+
+
+    </button>
+
+
+
+
+
+</div>
+
+
+
+
+
+<!-- =====================================================
+     ALERT TABLE
+====================================================== -->
+
+
+<div class="table-container">
+
+
+
+    <table class="patients-table alert-table">
+
+
+
+        <thead>
+
+
+            <tr>
+
+
+                <th>
+                    Paciente
+                </th>
+
+
+                <th>
+                    Alerta
+                </th>
+
+
+                <th>
+                    Prioridad
+                </th>
+
+
+                <th>
+                    Fecha
+                </th>
+
+
+                <th>
+                    Estado
+                </th>
+
+
+                <th>
+                    Acción
+                </th>
+
+
+            </tr>
+
+
+        </thead>
+
+
+
+
+
+
+        <tbody>
+
+
+
+
+
+            <tr>
+
+
+
+                <td>
+
+
+                    <div class="patient-info">
+
+
+
+                        <div class="patient-avatar">
+
+
+                            <i data-lucide="user"></i>
+
+
+                        </div>
+
+
+
+                        <div>
+
+
+                            <strong>
+                                María Rodríguez
+                            </strong>
+
+
+                            <span>
+                                ID: 00124
+                            </span>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </td>
+
+
+
+
+
+
+
+                <td>
+
+
+                    IMC elevado
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <span class="priority high">
+
+                        Alta
+
+                    </span>
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+                    Hoy
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <span class="status status-warning">
+
+                        Pendiente
+
+                    </span>
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <a href="#" class="table-button">
+
+                        Revisar →
+
+                    </a>
+
+
+                </td>
+
+
+
+
+
+            </tr>
+
+
+
+
+
+
+
+
+
+            <tr>
+
+
+
+                <td>
+
+
+                    <div class="patient-info">
+
+
+
+                        <div class="patient-avatar">
+
+
+                            <i data-lucide="user"></i>
+
+
+                        </div>
+
+
+
+                        <div>
+
+
+                            <strong>
+                                Carlos Vargas
+                            </strong>
+
+
+                            <span>
+                                ID: 00125
+                            </span>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </td>
+
+
+
+
+
+
+
+                <td>
+
+
+                    Peso crítico
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <span class="priority medium">
+
+                        Media
+
+                    </span>
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+                    Hace 2 días
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <span class="status status-warning">
+
+                        Pendiente
+
+                    </span>
+
+
+                </td>
+
+
+
+
+
+
+                <td>
+
+
+                    <a href="#" class="table-button">
+
+                        Revisar →
+
+                    </a>
+
+
+                </td>
+
+
+
+
+
+            </tr>
+
+
+
+
+
+
+
+        </tbody>
+
+
+    </table>
+
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+
+<footer class="dashboard-footer">
+
+
+    <p>
+        © 2026 Espitaleta Wellness
+    </p>
+
+
+    <span>
+        Plataforma de seguimiento clínico
+    </span>
+
+
+</footer>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPTS
+====================================================== -->
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<script src="../js/core/auth.js"></script>
+
+
+<script src="../js/config/language.js"></script>
+
+
+<script src="../js/pages/alerts.js"></script>
+
+
+
+<script>
+
+    lucide.createIcons();
+
+</script>
+
+
+
+
+
+
+</body>
+
+
+</html>

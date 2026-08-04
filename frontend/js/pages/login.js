@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* INIT ICONS */
 
     lucide.createIcons();
-
+    
 
     /*
         DEMO USER

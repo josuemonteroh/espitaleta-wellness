@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Métricas | Espitaleta Wellness
+    </title>
+
+
+    <!-- Dashboard Design System -->
+    <link rel="stylesheet" href="../css/pages/dashboard.css">
+
+
+    <!-- Metrics Page -->
+    <link rel="stylesheet" href="../css/pages/metrics.css">
+
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="dashboard-layout">
+
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+
+    <aside class="sidebar">
+
+
+
+        <div class="sidebar-brand">
+
+
+            <div class="brand-mark">
+
+                <i data-lucide="heart-pulse"></i>
+
+            </div>
+
+
+
+            <div class="brand-text">
+
+                <strong>
+                    Espitaleta
+                </strong>
+
+
+                <span>
+                    Wellness
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <nav class="sidebar-navigation">
+
+
+
+            <span class="nav-label">
+                General
+            </span>
+
+
+
+
+
+            <a href="dashboard.html">
+
+
+                <i data-lucide="layout-dashboard"></i>
+
+
+                <span>
+                    Dashboard
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="pacientes.html">
+
+
+                <i data-lucide="users"></i>
+
+
+                <span>
+                    Pacientes
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="metricas.html" class="active">
+
+
+                <i data-lucide="activity"></i>
+
+
+                <span>
+                    Métricas
+                </span>
+
+
+            </a>
+
+
+
+
+
+
+            <span class="nav-label">
+                Clínico
+            </span>
+
+
+
+
+
+            <a href="historial.html">
+
+
+                <i data-lucide="clipboard-list"></i>
+
+
+                <span>
+                    Historial clínico
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="alertas.html">
+
+
+                <i data-lucide="triangle-alert"></i>
+
+
+                <span>
+                    Alertas
+                </span>
+
+
+                <span class="nav-badge">
+                    12
+                </span>
+
+
+            </a>
+
+
+
+
+
+            <a href="reportes.html">
+
+
+                <i data-lucide="file-text"></i>
+
+
+                <span>
+                    Reportes
+                </span>
+
+
+            </a>
+
+
+
+
+        </nav>
+
+
+
+
+
+
+        <div class="sidebar-footer">
+
+
+            <a href="../login.html">
+
+
+                <i data-lucide="log-out"></i>
+
+
+                <span>
+                    Cerrar sesión
+                </span>
+
+
+            </a>
+
+
+        </div>
+
+
+
+
+    </aside>
+        <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+
+    <main class="dashboard-content">
+
+
+
+
+
+        <!-- HEADER -->
+
+        <header class="dashboard-header">
+
+
+            <div class="header-title">
+
+
+                <h1>
+                    Métricas clínicas
+                </h1>
+
+
+                <p>
+                    Análisis de evolución y seguimiento de pacientes
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="header-actions">
+
+
+                <button class="language-button">
+
+
+                    <i data-lucide="languages"></i>
+
+
+                    <span>
+                        ES
+                    </span>
+
+
+                    <i data-lucide="chevron-down"></i>
+
+
+                </button>
+
+
+
+
+
+                <button class="icon-button">
+
+
+                    <i data-lucide="bell"></i>
+
+
+                </button>
+
+
+
+
+
+                <div class="user-profile">
+
+
+                    <div class="user-avatar">
+
+
+                        <i data-lucide="user"></i>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="user-info">
+
+
+                        <strong>
+                            Dr. Espitaleta
+                        </strong>
+
+
+                        <span>
+                            Espitaleta Wellness
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+
+
+
+
+
+        <!-- KPI METRICS -->
+
+
+        <section class="metrics-summary">
+
+
+
+
+
+            <article class="metric-card">
+
+
+
+                <div class="metric-icon">
+
+
+                    <i data-lucide="scale"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+                        Peso promedio
+                    </span>
+
+
+                    <strong>
+                        78.4 kg
+                    </strong>
+
+
+                    <p>
+                        Promedio actual
+                    </p>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+
+
+            <article class="metric-card">
+
+
+
+                <div class="metric-icon">
+
+
+                    <i data-lucide="heart-pulse"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+                        IMC promedio
+                    </span>
+
+
+                    <strong>
+                        26.3
+                    </strong>
+
+
+                    <p>
+                        Seguimiento general
+                    </p>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+
+
+
+            <article class="metric-card">
+
+
+
+                <div class="metric-icon">
+
+
+                    <i data-lucide="users"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+                        Pacientes evaluados
+                    </span>
+
+
+                    <strong>
+                        120
+                    </strong>
+
+
+                    <p>
+                        Registros clínicos
+                    </p>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+
+
+
+            <article class="metric-card">
+
+
+
+                <div class="metric-icon">
+
+
+                    <i data-lucide="trending-up"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+                        Variación mensual
+                    </span>
+
+
+                    <strong>
+                        +4.8%
+                    </strong>
+
+
+                    <p>
+                        Último periodo
+                    </p>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- CHARTS -->
+
+
+
+        <section class="metrics-grid">
+
+
+
+
+
+
+            <article class="metric-panel">
+
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+
+                        <h2>
+                            Evolución de peso
+                        </h2>
+
+
+                        <p>
+                            Promedio mensual de pacientes
+                        </p>
+
+
+                    </div>
+
+
+
+                    <i data-lucide="line-chart"></i>
+
+
+
+                </div>
+
+
+
+
+
+                <div class="chart-container">
+
+
+                    <canvas id="weightEvolutionChart"></canvas>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+
+            <article class="metric-panel">
+
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+
+                        <h2>
+                            Distribución IMC
+                        </h2>
+
+
+                        <p>
+                            Clasificación actual
+                        </p>
+
+
+                    </div>
+
+
+
+                    <i data-lucide="pie-chart"></i>
+
+
+
+                </div>
+
+
+
+
+
+                <div class="chart-container">
+
+
+                    <canvas id="bmiDistributionChart"></canvas>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+
+        </section>
+
+                <!-- =====================================================
+             ADDITIONAL METRICS
+        ====================================================== -->
+
+
+        <section class="metrics-grid single">
+
+
+
+            <article class="metric-panel">
+
+
+
+                <div class="panel-header">
+
+
+                    <div>
+
+                        <h2>
+                            Estado de pacientes
+                        </h2>
+
+
+                        <p>
+                            Distribución según seguimiento clínico
+                        </p>
+
+                    </div>
+
+
+                    <i data-lucide="bar-chart-3"></i>
+
+
+                </div>
+
+
+
+
+
+                <div class="chart-container">
+
+
+                    <canvas id="patientsStatusChart"></canvas>
+
+
+                </div>
+
+
+
+            </article>
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- =====================================================
+             RECENT MEASUREMENTS
+        ====================================================== -->
+
+
+        <section class="metrics-table-section">
+
+
+
+            <div class="section-header">
+
+
+                <div>
+
+                    <h2>
+                        Últimas mediciones
+                    </h2>
+
+
+                    <p>
+                        Registros clínicos recientes de pacientes
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="table-container">
+
+
+
+                <table class="patients-table">
+
+
+
+                    <thead>
+
+
+                        <tr>
+
+                            <th>
+                                Paciente
+                            </th>
+
+
+                            <th>
+                                Peso
+                            </th>
+
+
+                            <th>
+                                IMC
+                            </th>
+
+
+                            <th>
+                                Fecha
+                            </th>
+
+
+                            <th>
+                                Estado
+                            </th>
+
+
+                        </tr>
+
+
+                    </thead>
+
+
+
+
+
+
+                    <tbody>
+
+
+
+                        <tr>
+
+
+                            <td>
+
+
+                                <div class="patient-info">
+
+
+                                    <div class="patient-avatar">
+
+                                        <i data-lucide="user"></i>
+
+                                    </div>
+
+
+
+                                    <div>
+
+                                        <strong>
+                                            María Rodríguez
+                                        </strong>
+
+
+                                        <span>
+                                            ID: 00124
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </td>
+
+
+
+                            <td>
+
+                                72.5 kg
+
+                            </td>
+
+
+
+                            <td>
+
+                                24.8
+
+                            </td>
+
+
+
+                            <td>
+
+                                Hoy
+
+                            </td>
+
+
+
+                            <td>
+
+                                <span class="status status-success">
+
+                                    Estable
+
+                                </span>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+
+
+
+
+                        <tr>
+
+
+                            <td>
+
+
+                                <div class="patient-info">
+
+
+                                    <div class="patient-avatar">
+
+                                        <i data-lucide="user"></i>
+
+                                    </div>
+
+
+
+                                    <div>
+
+                                        <strong>
+                                            Carlos Vargas
+                                        </strong>
+
+
+                                        <span>
+                                            ID: 00125
+                                        </span>
+
+
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </td>
+
+
+
+                            <td>
+
+                                94.0 kg
+
+                            </td>
+
+
+
+                            <td>
+
+                                31.2
+
+                            </td>
+
+
+
+                            <td>
+
+                                Hace 3 días
+
+                            </td>
+
+
+
+                            <td>
+
+                                <span class="status status-warning">
+
+                                    Revisar
+
+                                </span>
+
+                            </td>
+
+
+                        </tr>
+
+
+
+
+
+                    </tbody>
+
+
+                </table>
+
+
+
+            </div>
+
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+        <!-- FOOTER -->
+
+
+        <footer class="dashboard-footer">
+
+
+            <p>
+                © 2026 Espitaleta Wellness
+            </p>
+
+
+            <span>
+                Plataforma de seguimiento clínico
+            </span>
+
+
+        </footer>
+
+
+
+
+    </main>
+
+
+
+</div>
+
+
+<!-- =====================================================
+     SCRIPTS
+====================================================== -->
+
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script src="../js/core/auth.js"></script>
+
+
+<script src="../js/config/language.js"></script>
+
+
+<script src="../js/pages/metrics.js"></script>
+
+
+
+</body>
+
+
+</html>
+

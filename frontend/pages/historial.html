@@ -7,24 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
-        Pacientes | Espitaleta Wellness
+        Historial Clínico | Espitaleta Wellness
     </title>
 
 
-    <!-- Dashboard styles (misma base visual) -->
+    <!-- BASE DESIGN -->
+
+    <link rel="stylesheet" href="../css/base/variables.css">
+    <link rel="stylesheet" href="../css/base/reset.css">
+    <link rel="stylesheet" href="../css/base/typography.css">
+    <link rel="stylesheet" href="../css/base/global.css">
+
+
+    <!-- COMPONENTS -->
+
+    <link rel="stylesheet" href="../css/components/button.css">
+    <link rel="stylesheet" href="../css/components/card.css">
+    <link rel="stylesheet" href="../css/components/table.css">
+
+
+    <!-- LAYOUT -->
+
     <link rel="stylesheet" href="../css/pages/dashboard.css">
 
-    <!-- Patients styles -->
-    <link rel="stylesheet" href="../css/pages/patients.css">
 
+    <!-- PAGE -->
 
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../css/pages/history.css">
+
 
 </head>
 
 
+
 <body>
+
 
 
 <div class="dashboard-layout">
@@ -53,6 +70,7 @@
 
             <div class="brand-text">
 
+
                 <strong>
                     Espitaleta
                 </strong>
@@ -72,17 +90,14 @@
 
 
 
+
         <nav class="sidebar-navigation">
 
 
 
             <span class="nav-label">
-
                 General
-
             </span>
-
-
 
 
 
@@ -93,9 +108,7 @@
 
 
                 <span>
-
                     Dashboard
-
                 </span>
 
 
@@ -105,16 +118,14 @@
 
 
 
-            <a href="pacientes.html" class="active">
+            <a href="pacientes.html">
 
 
                 <i data-lucide="users"></i>
 
 
                 <span>
-
                     Pacientes
-
                 </span>
 
 
@@ -131,9 +142,7 @@
 
 
                 <span>
-
                     Métricas
-
                 </span>
 
 
@@ -143,26 +152,23 @@
 
 
 
+
             <span class="nav-label">
-
                 Clínico
-
             </span>
 
 
 
 
 
-            <a href="historial.html">
+            <a href="historial.html" class="active">
 
 
                 <i data-lucide="clipboard-list"></i>
 
 
                 <span>
-
                     Historial clínico
-
                 </span>
 
 
@@ -179,16 +185,13 @@
 
 
                 <span>
-
                     Alertas
-
                 </span>
 
 
+
                 <span class="nav-badge">
-
                     12
-
                 </span>
 
 
@@ -205,9 +208,7 @@
 
 
                 <span>
-
                     Reportes
-
                 </span>
 
 
@@ -223,28 +224,22 @@
 
 
 
-        <div class="sidebar-footer">
 
+        <div class="sidebar-footer">
 
 
             <a href="../login.html">
 
 
-
                 <i data-lucide="log-out"></i>
 
 
-
                 <span>
-
                     Cerrar sesión
-
                 </span>
 
 
-
             </a>
-
 
 
         </div>
@@ -265,21 +260,24 @@
 
 
 
+
         <!-- HEADER -->
 
+
         <header class="dashboard-header">
+
 
 
             <div class="header-title">
 
 
                 <h1>
-                    Pacientes
+                    Historial clínico
                 </h1>
 
 
                 <p>
-                    Gestión y seguimiento clínico de pacientes
+                    Consulta y seguimiento del historial médico de pacientes
                 </p>
 
 
@@ -290,6 +288,7 @@
 
 
             <div class="header-actions">
+
 
 
                 <button class="language-button">
@@ -358,9 +357,8 @@
                 </div>
 
 
-
-
             </div>
+
 
 
         </header>
@@ -371,27 +369,27 @@
 
 
 
-        <!-- PATIENT SUMMARY -->
+
+        <!-- SUMMARY CARDS -->
 
 
-        <section class="patient-summary">
-
-
-
-
-
-            <article class="summary-card">
+        <section class="history-summary">
 
 
 
-                <div class="summary-icon">
 
 
-                    <i data-lucide="users"></i>
+            <article class="history-card">
+
+
+
+                <div class="history-icon">
+
+
+                    <i data-lucide="folder-open"></i>
 
 
                 </div>
-
 
 
 
@@ -399,7 +397,7 @@
 
 
                     <span>
-                        Pacientes en seguimiento
+                        Expedientes registrados
                     </span>
 
 
@@ -409,12 +407,11 @@
 
 
                     <p>
-                        Bajo seguimiento clínico
+                        Pacientes con historial
                     </p>
 
 
                 </div>
-
 
 
             </article>
@@ -426,18 +423,17 @@
 
 
 
-            <article class="summary-card">
+            <article class="history-card">
 
 
 
-                <div class="summary-icon">
+                <div class="history-icon">
 
 
-                    <i data-lucide="activity"></i>
+                    <i data-lucide="stethoscope"></i>
 
 
                 </div>
-
 
 
 
@@ -445,22 +441,21 @@
 
 
                     <span>
-                        Métricas recientes
+                        Consultas realizadas
                     </span>
 
 
                     <strong>
-                        18
+                        356
                     </strong>
 
 
                     <p>
-                        Actualizaciones recientes
+                        Registros clínicos
                     </p>
 
 
                 </div>
-
 
 
             </article>
@@ -472,19 +467,17 @@
 
 
 
-
-            <article class="summary-card">
-
+            <article class="history-card">
 
 
-                <div class="summary-icon">
+
+                <div class="history-icon">
 
 
-                    <i data-lucide="triangle-alert"></i>
+                    <i data-lucide="pill"></i>
 
 
                 </div>
-
 
 
 
@@ -492,22 +485,65 @@
 
 
                     <span>
-                        Alertas clínicas
+                        Tratamientos activos
                     </span>
 
 
                     <strong>
-                        12
+                        48
                     </strong>
 
 
                     <p>
-                        Requieren revisión
+                        Seguimientos actuales
                     </p>
 
 
                 </div>
 
+
+            </article>
+
+
+
+
+
+
+
+
+            <article class="history-card">
+
+
+
+                <div class="history-icon">
+
+
+                    <i data-lucide="clock"></i>
+
+
+                </div>
+
+
+
+                <div>
+
+
+                    <span>
+                        Última actualización
+                    </span>
+
+
+                    <strong>
+                        Hoy
+                    </strong>
+
+
+                    <p>
+                        Información reciente
+                    </p>
+
+
+                </div>
 
 
             </article>
@@ -524,10 +560,14 @@
 
 
 
-        <!-- PATIENT LIST HEADER -->
 
 
-        <section class="patients-container">
+        <!-- HISTORY TABLE CONTAINER -->
+
+
+        <section class="history-container">
+
+
 
 
 
@@ -538,12 +578,13 @@
 
 
                     <h2>
-                        Lista de pacientes
+                        Historial de pacientes
                     </h2>
 
 
+
                     <p>
-                        Consulte información clínica actualizada
+                        Consulta de diagnósticos y tratamientos registrados
                     </p>
 
 
@@ -558,7 +599,9 @@
 
 
 
-            <div class="patients-actions">
+
+
+            <div class="history-actions">
 
 
 
@@ -570,7 +613,7 @@
 
 
 
-                    <input 
+                    <input
                         type="text"
                         placeholder="Buscar paciente..."
                     >
@@ -583,7 +626,7 @@
 
 
 
-                <button class="filter-button">
+                <button class="btn btn-outline">
 
 
                     <i data-lucide="filter"></i>
@@ -597,10 +640,13 @@
 
 
 
-
             </div>
 
-                        <!-- TABLE -->
+
+
+
+
+
 
 
             <div class="table-container">
@@ -623,17 +669,17 @@
 
 
                             <th>
-                                Peso reciente
+                                Última consulta
                             </th>
 
 
                             <th>
-                                IMC
+                                Diagnóstico
                             </th>
 
 
                             <th>
-                                Última medición
+                                Tratamiento
                             </th>
 
 
@@ -647,6 +693,7 @@
                             </th>
 
 
+
                         </tr>
 
 
@@ -656,9 +703,7 @@
 
 
 
-
                     <tbody>
-
 
 
 
@@ -680,6 +725,7 @@
 
 
                                     </div>
+
 
 
 
@@ -710,39 +756,25 @@
 
 
 
-
                             <td>
-
-
-                                <strong>
-                                    72.5 kg
-                                </strong>
-
-
-                            </td>
-
-
-
-
-
-
-                            <td>
-
-                                24.8
-
-                            </td>
-
-
-
-
-
-
-                            <td>
-
                                 Hoy
-
                             </td>
 
+
+
+
+
+                            <td>
+                                Control nutricional
+                            </td>
+
+
+
+
+
+                            <td>
+                                Plan alimenticio
+                            </td>
 
 
 
@@ -752,9 +784,7 @@
 
 
                                 <span class="status status-success">
-
-                                    Estable
-
+                                    Activo
                                 </span>
 
 
@@ -764,20 +794,12 @@
 
 
 
-
                             <td>
 
 
-                                <button class="table-button">
-
-
-                                    Ver expediente
-
-
-                                    <i data-lucide="arrow-right"></i>
-
-
-                                </button>
+                                <a class="table-button" href="#">
+                                    Ver historial →
+                                </a>
 
 
                             </td>
@@ -787,9 +809,7 @@
 
                         </tr>
 
-
-
-
+                                                </tr>
 
 
 
@@ -813,6 +833,7 @@
 
 
                                     </div>
+
 
 
 
@@ -843,39 +864,25 @@
 
 
 
-
                             <td>
-
-
-                                <strong>
-                                    94.0 kg
-                                </strong>
-
-
-                            </td>
-
-
-
-
-
-
-                            <td>
-
-                                31.2
-
-                            </td>
-
-
-
-
-
-
-                            <td>
-
                                 Hace 3 días
-
                             </td>
 
+
+
+
+
+                            <td>
+                                Sobrepeso
+                            </td>
+
+
+
+
+
+                            <td>
+                                Seguimiento médico
+                            </td>
 
 
 
@@ -885,9 +892,7 @@
 
 
                                 <span class="status status-warning">
-
-                                    Revisar
-
+                                    Revisión
                                 </span>
 
 
@@ -897,20 +902,12 @@
 
 
 
-
                             <td>
 
 
-                                <button class="table-button">
-
-
-                                    Ver expediente
-
-
-                                    <i data-lucide="arrow-right"></i>
-
-
-                                </button>
+                                <a class="table-button" href="#">
+                                    Ver historial →
+                                </a>
 
 
                             </td>
@@ -927,13 +924,12 @@
                     </tbody>
 
 
-
                 </table>
 
 
 
-
             </div>
+
 
 
 
@@ -973,27 +969,31 @@
 
 
 
-
 </div>
 
-<!-- ==========================================================
+<!-- =====================================================
      SCRIPTS
-========================================================== -->
+====================================================== -->
 
 
 <script src="https://unpkg.com/lucide@latest"></script>
 
-
 <script src="../js/core/auth.js"></script>
-
 
 <script src="../js/config/language.js"></script>
 
+<script src="../js/pages/history.js"></script>
 
-<script src="../js/pages/patients.js"></script>
+
+<script>
+
+    lucide.createIcons();
+
+</script>
 
 
 </body>
 
 
 </html>
+
